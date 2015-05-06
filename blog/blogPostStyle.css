@@ -226,5 +226,23 @@ nav ul li a {
 	background-color: #D0D0D0;
 	width: 100%;
 	margin:5px 5px 5px 5px;
-
+}
+header .profileLogo .logoPlaceholder {
+	float: left;
+	margin-bottom: 50px;
+}
+header .profilePhoto {
+	float: left;
+	clear: both;
+	margin-right: 3%;
+}
+header .profileHeader {
+	text-align: left;
+	padding-top: 10%;
+}
+header .socialNetworkNavBar .socialNetworkNav {
+	width: 74px;
+	height: 74px;
+	display: inline-block;
+	margin-right: 23px;
 }
