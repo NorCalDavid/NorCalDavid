@@ -2,25 +2,9 @@
 /*---------------------------------------------------------------------------------------------------------------*/
 /* Page Wraper */
 /*---------------------------------------------------------------------------------------------------------------*/
-#wraper header {
-	background-color: #D0CFCF;
-	overflow: auto;
-	font-style: normal;
-	font-weight: 400;
-	color: #3F3F3F;
-}
-#wraper header h1 {
-	padding: 0 0 0 0;
+header {
 	text-align: center;
-	margin: 2px 0 0 0;
-	font-family: Verdana, Geneva, sans-serif;
-}
-#wraper header h3	{
-	padding: 0 0 2px 0;
-	text-align: center;
-	margin: 2px 0 6px 0;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-style: italic;
+	display: block;
 }
 header .profileLogo .logoPlaceholder {
 	background-color: rgba(208,207,207,1.00);
@@ -56,6 +40,31 @@ header .profileHeader h3 {
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 24px;
+}
+hr {
+	background-color: rgba(208,207,207,1.00);
+	height: 1px;
+}
+header .profileHeader p {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.8;
+	overflow-y: auto;
+}
+header .socialNetworkNavBar {
+	text-align: center;
+	display: block;
+	margin-top: 60px;
+	clear: both;
+}
+header .socialNetworkNavBar .socialNetworkNav {
+	border-radius: 50%;
+    cursor: pointer;
+}
+header .socialNetworkNavBar .socialNetworkNav img:hover {
+    opacity:0.5;
 }
 /*---------------------------------------------------------------------------------------------------------------*/
 /* Blog Content */
