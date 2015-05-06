@@ -116,6 +116,7 @@ margin-bottom: 25px;
 	margin: 2px 0 6px 0;
 }
 #content #mainContent h2 {
+	text-decoration: none;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 14px;
 	font-style: normal;
