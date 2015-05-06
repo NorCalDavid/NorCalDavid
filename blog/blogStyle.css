@@ -116,7 +116,6 @@ margin-bottom: 25px;
 	margin: 2px 0 6px 0;
 }
 #content #mainContent h2 {
-	text-decoration: none;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 14px;
 	font-style: normal;
@@ -138,6 +137,9 @@ margin-bottom: 25px;
 	font-weight: 200;
 	text-align: justify;
 	vertical-align: middle;
+}
+.postings a {
+	text-decoration: none;
 }
 .postings h2 {
 	font-family: "Courier New", Courier, monospace;
