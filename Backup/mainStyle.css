@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* -------------------------------------------------------------------- */
+/* Body Style                                                           */
+/* -------------------------------------------------------------------- */
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 92%;
+	max-width: 960px;
+	padding-left: 2.275%;
+	padding-right: 2.275%;
+}
+
+/* -------------------------------------------------------------------- */
+/* Header Style                                                         */
+/* -------------------------------------------------------------------- */
+
+header {
+	text-align: center;
+	display: block;
+}
+
+hr {
+	background-color: rgba(208,207,207,1.00);
+	height: 1px;
+	margin-top: 15px;
+}
+
+/* ----------------------- */
+/* Profile Photo           */
+/* ----------------------- */
+
+header .pPhoto {
+	background-color:  #8D8D8D;
+	width: 265px;
+	border-radius: 50%;
+	height: 265px;
+	margin-right: 3%;
+	margin-bottom: 20px;
+	clear: both;
+	float: left;
+}
+
+/* ----------------------- */
+/* Profile Header          */
+/* ----------------------- */
+
+header .profileHeader {
+	text-align: left;
+	padding-top: 5%;
+}
+header .profileHeader h1 {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 24px;
+}
+header .profileHeader h3 {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 16px;
+	font-weight: 700;
+	/*line-height: 24px;*/
+}
+header .profileHeader p {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	overflow-y: auto;
+}
+
+/* ----------------------- */
+/* Social Nav Bar          */
+/* ----------------------- */
+
+header .socialNetworkBar {
+	text-align: left;
+	display: block;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-top: 20px;
+	/*clear: both;*/
+}
+header .socialNetworkBar .socialLinks {
+	width: 60px;
+	height: 30px;
+	display: inline-block;
+	margin-right: 12px;
+	/*border-radius: 25%;*/
+  cursor: pointer;
+}
+header .socialNetworkBar .socialLinks img:hover {
+    opacity:0.5;
+}
+
+/* -------------------------------------------------------------------- */
+/* Main Content                                                         */
+/* -------------------------------------------------------------------- */
+
+.mainContent {
+	display: block;
+}
+.mainContent .section1 {
+	margin-top: 60px;
+	display: block;
+}
+.section1 .sectionTitle, .section2 .sectionTitle {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-left: 0;
+}
+.section1 .sectionTitleRule {
+	width: 22.5%;
+	margin: 0 3% 0 0;
+	float: left;
+	clear: both;
+}
+.section1 .sectionTitleRule2 {
+	background-color: rgba(208,207,207,1.00);
+	height: 1px;
+	padding: 0px;
+}
+.mainContent .section1 .section1Content {
+	display: block;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-left: 26%;
+	margin-bottom: 0%;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+	color: rgba(208,207,207,1.00);
+}
+.mainContent .section1 .section1Content span {
+	color: rgba(146,146,146,1.00);
+	font-family: sans-serif;
+}
+.section2 .sectionContentTitle {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 18px;
+	font-weight: 700;
+}
+.section2 .sectionTitleRule {
+	width: 100%;
+	margin: 0 3% 0 0;
+	float: left;
+	clear: both;
+}
+.section2 .sectionContentSubTitle {
+	font-family: sans-serif;
+	color: rgba(68,67,67,1.00);
+	font-size: 14px;
+	font-weight: 400;
+}
+.section2 h2 {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-top: 15px;
+	padding-left: 25px
+}
+.section2 p {
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+	color: rgba(208,207,207,1.00);
+	padding-left: 50px;
+}
+
+/* -------------------------------------------------------------------- */
+/* External Links                                                       */
+/* -------------------------------------------------------------------- */
+
+.mainContent .externalResourcesNav {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	padding-top: 0px;
+	clear: both;
+}
+.mainContent .externalResourcesNav .externalResources {
+	width: 199px;
+	height: 48px;
+	background-color: rgba(208,207,207,1.00);
+	display: inline-block;
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 3%;
+	cursor: pointer;
+}
+.mainContent .externalResourcesNav .externalResources:hover {
+	background-color: rgba(153,153,153,1.00);
+}
+.externalResourcesNav .externalResources a {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(255,255,255,1.00);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	text-decoration: none;
+}
+.stretch {
+	content: '';
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+/* -------------------------------------------------------------------- */
+/* Footer                                                               */
+/* -------------------------------------------------------------------- */
+
+footer .footerDisclaimer {
+	float: left;
+	margin-left: 3%;
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(104,103,103,1.00);
+	font-weight: 700;
+}
+footer .footerDisclaimer span {
+	color: rgba(181,178,178,1.00);
+	font-weight: 400;
+}
+footer .footerNote {
+	float: right;
+	margin-right: 3%;
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(104,103,103,1.00);
+	font-weight: 700;
+}
+footer .footerNote span {
+	color: rgba(181,178,178,1.00);
+	font-weight: 400;
+}
