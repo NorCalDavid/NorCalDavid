@@ -141,6 +141,9 @@ margin-bottom: 25px;
 .postings a {
 	text-decoration: none;
 }
+.postings a:hover {
+	color: #003B92;
+}
 .postings h2 {
 	font-family: "Courier New", Courier, monospace;
 	color: #D0D0D0;
