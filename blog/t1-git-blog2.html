@@ -1,16 +1,17 @@
 <!doctype html>
 <html>
-
 <head>
   <meta charset="UTF-8">
-  <title>NorCalDavid's Blog</title>
-  <link href="blogPostStyle.css" rel="stylesheet" type="text/css">
+  <title>David Uli's Blog</title>
+  <link href="blogpoststylesheet.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <!--************************************************************************
-    Social Media Scripts Start
-    ****************************************************************************-->
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts Begin ***************************************** -->
+<!-- ******************************************************************** -->
+
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -19,48 +20,55 @@
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <!--************************************************************************
-    Social Media Scripts End
-    ****************************************************************************-->
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts End ******************************************* -->
+<!-- ******************************************************************** -->
+
 <div id="wraper">
 
 <!-- ******************************************************************** -->
-<!-- ****************************** Header ****************************** -->
+<!-- Header ************************************************************* -->
 <!-- ******************************************************************** -->
 
-<div id="headSection">
-  <header>
-   <div class="pPhoto"><img src="profilephoto.png" alt="David Uli"> </div>
+  <div id="headSection">
+    <header>
+    <div class="pPhoto"><img src="profilephoto.png" alt="David Uli"> </div>
 
-    <section class="profileHeader">
-     <h1>David Uli</h1>
-     <h3>Software Developer</h3>
-     <hr>
+      <section class="profileHeader">
+       <h1>David Uli</h1>
+       <h3>Software Developer</h3>
+       <hr>
 
-     <aside class="socialNetworkBar">
-       <div class="socialLinks"><a href="https://www.facebook.com/daviduli" title="Facebook"><img src="facebook.png"></a> </div>
-       <div class="socialLinks"><a href="https://www.linkedin.com/in/daviduli" title="LinkedIn"><img src="linkedin.png"></a> </div>
-       <div class="socialLinks"><a href="https://twitter.com/DUliNorCal" title="Twitter"><img src="twitter.png"></a> </div>
-       <div class="socialLinks"><a href="https://plus.google.com/u/0/100339871456714070726/posts" title="google+"><img src="googleplus.png"></a> </div>
-        <div class="socialLinks"><a href="https://github.com/NorCalDavid" title="GitHub"><img src="github.png"></a> </div>
-     </aside>
+       <aside class="socialNetworkBar">
+         <div class="socialLinks"><a href="https://www.facebook.com/daviduli" title="Facebook"><img src="facebook.png"></a> </div>
+         <div class="socialLinks"><a href="https://www.linkedin.com/in/daviduli" title="LinkedIn"><img src="linkedin.png"></a> </div>
+         <div class="socialLinks"><a href="https://twitter.com/DUliNorCal" title="Twitter"><img src="twitter.png"></a> </div>
+         <div class="socialLinks"><a href="https://plus.google.com/u/0/100339871456714070726/posts" title="google+"><img src="googleplus.png"></a> </div>
+          <div class="socialLinks"><a href="https://github.com/NorCalDavid" title="GitHub"><img src="github.png"></a> </div>
+       </aside>
 
-     <hr>
-    </section>
+       <hr>
+      </section>
 
-  </header>
-</div>
+    </header>
+  </div>
+
+<!-- ******************************************************************** -->
+<!-- Blog Title ********************************************************* -->
+<!-- ******************************************************************** -->
 
   <div id="content">
-  	  <section id="mainContent">
+  	 <section id="mainContent">
         <div id="blogIndexHead">
           <h1>Phase 0 - Week 1 Version Control ... How and Why?</h1>
           <h2>Friday, May 1, 2015</h2>
         </div>
 
-        <!--************************************************************************
-        Social Media Scripts Start
-        ****************************************************************************-->
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts Begin ***************************************** -->
+<!-- ******************************************************************** -->
+
           <section id="social">
 
           <p>
@@ -76,16 +84,30 @@
           </p>
 
           </section>
-        <!--************************************************************************
-        Social Media Scripts Start
-        ****************************************************************************-->
 
-      <p>As I approach the end of the first week on my journey at Dev Bootcamp I stop to think about the things that I have learned and and the many things that are still to come.  Week one was filled with information that is starting to lay the foundation for the many beautiful things that we will build along this journey.  In construction, you always start with a solid foundation before you start building walls.  This week we started working on our foundation by learning about the command line as well as git and GitHub.  While it is evident that understanding both will be critical to my success as a developer, I will focus on the benefits of version control and explain how git and GitHub help developers manage it.</p>
-      <h3>Version Control -- Why is it important?</h3>
-      <p>Going through and reading all of the information about version control and why it is important, it is pretty easy to understand the concept and say "sure I get it."  But for me I get a little more passionate about it when I think about it in relation to my past experiences.  In my previous job I developed a large database to support all of the operational functions for my team, over time I layered in a graphical interface and a robust front end that automated many of the manual tasks my team performed.  As my primary role was not a developer, I was forced to work on this project only when bandwidth permitted.  I can't tell you how many time I sat at my desk looking at something I wrote several months ago asking "What the heck was I doing here???" or I spent twenty minutes trying to figure out which was the latest version.  Just considering these two scenarios alone, I could have saved an enormous amount of time and frustration. Now if you add in the debugging time I would have saved by being able to quickly identify differences between versions and pinpoint the spot where errors were introduced, then maybe I could have actually had a life outside of work.</p>
-      <p>In the article <i>Why Version Control Is Critical To Your Success</i> by Ilya Olevsky, Ilya talks about the history of version control systems, dating back to the first generation in 1972.  She explains that over the last forty years, there have been many different systems and even more functional improvements along the way.  One of the most popular version control systems and the system that we will be using at Dev Bootcamp is git and GitHub.  git is the primary version control system that lives and operates with files locally on your computer.  GitHub is an online repository supporting git that allows multiple developers to seamlessly work together on projects by allowing them to independently work on their portion and later bring everything back together all while maintaining a detailed record of the changes.</p>
-      <h3>git and GitHub -- How can they help me?</h3>
-      <p>As a version control system, git gives you the ability to maintain detailed code modification history and allows for collaborative code modification through branching and merging.  In git, a branch is a separate work stream where you can make changes that are independent to the main file or <b>master</b> branch, giving you the ability to merge all or portions of the changes back together at a later time.  When coupled with GitHub as an online repository, you now have the ability to efficiently work with multiple developers independently and collaboratively as well as open up social aspects like code sharing and issue tracking.  With all of these features combined together, git and GitHub will definitely be a big part of the foundation that we continue to build on throughout our journey at Dev Bootcamp.</p>
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts End ******************************************* -->
+<!-- ******************************************************************** -->
+
+<!-- ******************************************************************** -->
+<!-- Blog Body  ********************************************************* -->
+<!-- ******************************************************************** -->
+
+     <p>As I approach the end of the first week on my journey at Dev Bootcamp I stop to think about the things that I have learned and and the many things that are still to come.  Week one was filled with information that is starting to lay the foundation for the many beautiful things that we will build along this journey.  In construction, you always start with a solid foundation before you start building walls.  This week we started working on our foundation by learning about the command line as well as git and GitHub.  While it is evident that understanding both will be critical to my success as a developer, I will focus on the benefits of version control and explain how git and GitHub help developers manage it.</p>
+
+    <h3>Version Control -- Why is it important?</h3>
+
+    <p>Going through and reading all of the information about version control and why it is important, it is pretty easy to understand the concept and say "sure I get it."  But for me I get a little more passionate about it when I think about it in relation to my past experiences.  In my previous job I developed a large database to support all of the operational functions for my team, over time I layered in a graphical interface and a robust front end that automated many of the manual tasks my team performed.  As my primary role was not a developer, I was forced to work on this project only when bandwidth permitted.  I can't tell you how many time I sat at my desk looking at something I wrote several months ago asking "What the heck was I doing here???" or I spent twenty minutes trying to figure out which was the latest version.  Just considering these two scenarios alone, I could have saved an enormous amount of time and frustration. Now if you add in the debugging time I would have saved by being able to quickly identify differences between versions and pinpoint the spot where errors were introduced, then maybe I could have actually had a life outside of work.</p>
+
+    <p>In the article <i>Why Version Control Is Critical To Your Success</i> by Ilya Olevsky, Ilya talks about the history of version control systems, dating back to the first generation in 1972.  She explains that over the last forty years, there have been many different systems and even more functional improvements along the way.  One of the most popular version control systems and the system that we will be using at Dev Bootcamp is git and GitHub.  git is the primary version control system that lives and operates with files locally on your computer.  GitHub is an online repository supporting git that allows multiple developers to seamlessly work together on projects by allowing them to independently work on their portion and later bring everything back together all while maintaining a detailed record of the changes.</p>
+
+    <h3>git and GitHub -- How can they help me?</h3>
+
+    <p>As a version control system, git gives you the ability to maintain detailed code modification history and allows for collaborative code modification through branching and merging.  In git, a branch is a separate work stream where you can make changes that are independent to the main file or <b>master</b> branch, giving you the ability to merge all or portions of the changes back together at a later time.  When coupled with GitHub as an online repository, you now have the ability to efficiently work with multiple developers independently and collaboratively as well as open up social aspects like code sharing and issue tracking.  With all of these features combined together, git and GitHub will definitely be a big part of the foundation that we continue to build on throughout our journey at Dev Bootcamp.</p>
+
+<!-- ******************************************************************** -->
+<!-- Author Information ************************************************* -->
+<!-- ******************************************************************** -->
 
       <section id="authorInfo">
           <h1>David Uli</h1>
@@ -98,9 +120,9 @@
 
     <div id="sidebar">
 
-    <!--************************************************************************
-    Blog Navigation Sidebar
-    ****************************************************************************-->
+<!-- ******************************************************************** -->
+<!-- Sidebar ************************************************************ -->
+<!-- ******************************************************************** -->
 
       <section id="navmenu">
       <nav>
@@ -130,15 +152,15 @@
   </div>
 </div>
 
-  <footer>
+<footer>
 
-    <!-- ******************************************************************** -->
-    <!-- ****************************** Footer ****************************** -->
-    <!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Footer ************************************************************* -->
+<!-- ******************************************************************** -->
 
-      <div id="footerBar"><p>2015  Copyright David Uli - <span>All Rights Reserved</span></p></div>
+    <div id="footerBar"><p>2015  Copyright David Uli - <span>All Rights Reserved</span></p></div>
 
-    </footer>
+</footer>
 
 </body>
 </html>
