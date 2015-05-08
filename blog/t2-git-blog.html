@@ -61,8 +61,8 @@
   <div id="content">
   	 <section id="mainContent">
         <div id="blogIndexHead">
-          <h1>Phase 0 - Week 1 Version Control ... How and Why?</h1>
-          <h2>Friday, May 1, 2015</h2>
+          <h1>Phase 0 - Week 2 The CSS Box Model</h1>
+          <h2>Friday, May 8, 2015</h2>
         </div>
 
 <!-- ******************************************************************** -->
@@ -72,12 +72,12 @@
           <section id="social">
 
           <p>
-            <div class="fb-share-button" data-href="https://github.com/NorCalDavid/NorCalDavid.github.io/blob/master/blog/t1-git-blog2.html" data-layout="button_count"></div>
+            <div class="fb-share-button" data-href="https://github.com/NorCalDavid/NorCalDavid.github.io/blob/master/blog/t2-git-blog.html" data-layout="button_count"></div>
           </p>
 
           <p>
             <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="http://norcaldavid.github.io/blog/t1-git-blog2.html#" data-counter="right"></script>
+            <script type="IN/Share" data-url="http://norcaldavid.github.io/blog/t2-git-blog.html#" data-counter="right"></script>
 
             <a href="https://twitter.com/share" class="twitter-share-button" data-via="DUliNorCal">Tweet</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -93,17 +93,23 @@
 <!-- Blog Body  ********************************************************* -->
 <!-- ******************************************************************** -->
 
-     <p>As I approach the end of the first week on my journey at Dev Bootcamp I stop to think about the things that I have learned and and the many things that are still to come.  Week one was filled with information that is starting to lay the foundation for the many beautiful things that we will build along this journey.  In construction, you always start with a solid foundation before you start building walls.  This week we started working on our foundation by learning about the command line as well as git and GitHub.  While it is evident that understanding both will be critical to my success as a developer, I will focus on the benefits of version control and explain how git and GitHub help developers manage it.</p>
+     <p>This week, we spent a lot of time learning about HTML and CSS.  We created a website in HTML and then built the style sheet required to transform the HTML to recreate an existing website.  In order to successfully complete this task, we needed to have an understanding of many different functions of CSS, one of which that I will talk more about in this blog is the CSS Box Model.</p>
 
-    <h3>Version Control -- Why is it important?</h3>
+    <p>Since all HTML elements can be considered as boxes, the CSS Box Model is important to understand because it will help you successfully position and/or shift items on the page to ensure that they display exactly as you intend.  There are 4 key components of the CSS Box Model that are represented in the below graphic, the content area, <span style="color:#C4DE9E">padding (green area)</span>, <b>border (black line)</b> and <span style = "color:#7FA8D7">margin (blue area)</span>.</p>
 
-    <p>Going through and reading all of the information about version control and why it is important, it is pretty easy to understand the concept and say "sure I get it."  But for me I get a little more passionate about it when I think about it in relation to my past experiences.  In my previous job I developed a large database to support all of the operational functions for my team, over time I layered in a graphical interface and a robust front end that automated many of the manual tasks my team performed.  As my primary role was not a developer, I was forced to work on this project only when bandwidth permitted.  I can't tell you how many time I sat at my desk looking at something I wrote several months ago asking "What the heck was I doing here???" or I spent twenty minutes trying to figure out which was the latest version.  Just considering these two scenarios alone, I could have saved an enormous amount of time and frustration. Now if you add in the debugging time I would have saved by being able to quickly identify differences between versions and pinpoint the spot where errors were introduced, then maybe I could have actually had a life outside of work.</p>
+    <img style="text-align:center" src="t2-git-blog-img1.png">
 
-    <p>In the article <i>Why Version Control Is Critical To Your Success</i> by Ilya Olevsky, Ilya talks about the history of version control systems, dating back to the first generation in 1972.  She explains that over the last forty years, there have been many different systems and even more functional improvements along the way.  One of the most popular version control systems and the system that we will be using at Dev Bootcamp is git and GitHub.  git is the primary version control system that lives and operates with files locally on your computer.  GitHub is an online repository supporting git that allows multiple developers to seamlessly work together on projects by allowing them to independently work on their portion and later bring everything back together all while maintaining a detailed record of the changes.</p>
+    <p>Think about this as if you were packing an item in a box to move, you would use padding around the item to protect it.  In the CSS Box Model, padding is the spacing between the content area and the border and it has the same background color as the content area.  An example of a situation where padding is important would be if you have text in a bordered box and the text is too close to the border then you need to increase the padding. Since the margin is the spacing between the border and the margin of the boxes surrounding it, you would adjust the margin if you had two bordered boxes where the borders were too close together.  Remember, all HTML elements are boxes so if you want two boxes to touch you need to adjust the margins of both items.</p>
 
-    <h3>git and GitHub -- How can they help me?</h3>
+    <p> <div id="container">
+     <img src="t2-git-blog-img2.png" title="CSS Box Clock" alt="CSS Box" style="float: right; padding: 0 10px 0 10px;" />
 
-    <p>As a version control system, git gives you the ability to maintain detailed code modification history and allows for collaborative code modification through branching and merging.  In git, a branch is a separate work stream where you can make changes that are independent to the main file or <b>master</b> branch, giving you the ability to merge all or portions of the changes back together at a later time.  When coupled with GitHub as an online repository, you now have the ability to efficiently work with multiple developers independently and collaboratively as well as open up social aspects like code sharing and issue tracking.  With all of these features combined together, git and GitHub will definitely be a big part of the foundation that we continue to build on throughout our journey at Dev Bootcamp.</p>
+    <p>The padding, border and margins for every box can be adjusted together or individually.  As shown in the graphic above, the padding and margin setting were adjusted together and the border settings for the right and bottom were set individually.  If your anything like me, you will have to stop and try to remember the order of the settings for top, right, bottom and left.  Thanks to my pair for the CSS challenge (Daniela) I just think of it like a clock starting out at the top of the hour. </p>
+    </div>
+
+    <p>In addition to adjusting the spacing of items using padding and margin, there are a bunch of style changes that can be applied to the border.  You can change the thickness color and style (solid, dashed etc) of the border and even give it rounded corners.  Try it out for yourself, add border-radius: 10px; to a box and see what happens, change the radius to 50% and you have a circle. Who said you can't fit a square peg in a round hole? They obviously don't know their CSS!</p>
+
+    <p>These are just a few things that you can do when you understand the CSS Box Model.  For more information and/or practice with the box model, check out <a href="http://www.w3schools.com/css/css_boxmodel.asp">www.w3schools.com.</a></p>
 
 <!-- ******************************************************************** -->
 <!-- Author Information ************************************************* -->
@@ -140,8 +146,8 @@
         <ul>
           <li><a href="http://norcaldavid.github.io/blog/t1-git-blog.html2" title="Link">5/1/15 - Version Control</a></li>
           <li><a href="http://norcaldavid.github.io/blog/c1-git-blog.html2" title="Link">5/1/15 - Fireside Chat</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/t2-git-blog.html" title="Link">5/8/15 - The CSS Box Model</a></li>
           <!--<li><a href="#" title="Link">Blog Posting 4</a></li>
-          <li><a href="#" title="Link">Blog Posting 5</a></li>
           <li><a href="#" title="Link">Blog Posting 5</a></li>
           <li><a href="#" title="Link">Blog Posting 6</a></li>-->
         </ul>
