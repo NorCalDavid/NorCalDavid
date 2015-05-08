@@ -116,7 +116,7 @@ header .socialNetworkBar .socialLinks img:hover {
 border-radius: 10px;
 border:solid #858585 1px;
 background-color: #858585;
-box-shadow: 10px 10px 5px #888888;
+box-shadow: 5px 5px 2px #5C5C5C;
 min-width: 200px;
 margin-right: 5px;
 margin-left: 5px;
