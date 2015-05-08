@@ -114,7 +114,9 @@ header .socialNetworkBar .socialLinks img:hover {
 }
 #navbar .button {
 border-radius: 10px;
-border:solid black 1px;
+border:solid #858585 1px;
+background-color: #858585;
+box-shadow: 10px 10px 5px #888888;
 min-width: 200px;
 margin-right: 5px;
 margin-left: 5px;
