@@ -112,18 +112,18 @@ header .socialNetworkBar .socialLinks img:hover {
   padding-left: 10px;
   padding-right: 10px;
 }
-#navbar button {
+#navbar .button {
 border-radius: 10px;
 min-width: 200px;
 margin-right: 5px;
 margin-left: 5px;
 display:inline-block;
 }
-#navbar button a img {
+#navbar .button a img {
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
 }
-#navbar button a {
+#navbar .button a {
 
   color: #5D5D62;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
