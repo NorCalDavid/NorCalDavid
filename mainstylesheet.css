@@ -237,3 +237,13 @@ display:inline-block;
   padding-bottom: 15px;
   text-align: center;
 }
+
+/* -------------------------------------------------------------------- */
+/* Feedback Form Modifications                                          */
+/* -------------------------------------------------------------------- */
+
+#feedbackform {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 5px 5px 5px;
+}
