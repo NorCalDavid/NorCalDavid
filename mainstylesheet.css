@@ -114,18 +114,20 @@ header .socialNetworkBar .socialLinks img:hover {
 }
 #navbar .button {
 border-radius: 10px;
-border:solid #858585 1px;
+/*border:solid #858585 1px;
 background-color: #ADADAD;
-box-shadow: 5px 5px 2px #5C5C5C;
+box-shadow: 5px 5px 2px #5C5C5C;*/
 min-width: 200px;
 margin-right: 10px;
 margin-left: 10px;
-margin-bottom: 5px;
+margin-bottom: 0px;
 display:inline-block;
 }
 #navbar .button a img {
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
+  height: 50px;
+  width: 50px;
 }
 #navbar .button a {
 
@@ -168,10 +170,7 @@ display:inline-block;
   height: 3px;
 }
 #mainContent .contactInfo .contactContent {
-  margin-top: 0%;
-  margin-right: 0%;
-  margin-left: 26%;
-  margin-bottom: 0%;
+  margin: 0 0 0 26%;
   padding: 0 0 0 0;
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
