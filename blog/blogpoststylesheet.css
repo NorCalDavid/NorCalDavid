@@ -100,6 +100,9 @@ header .socialNetworkBar .socialLinks {
 header .socialNetworkBar .socialLinks img:hover {
     opacity:0.5;
 }
+.fb-share-button {
+  margin-bottom: 5px;
+}
 
 /* -------------------------------------------------------------------- */
 /* Main Content Style                                                   */
