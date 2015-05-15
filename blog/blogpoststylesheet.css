@@ -127,6 +127,13 @@ header .socialNetworkBar .socialLinks img:hover {
   overflow: auto;
 }
 
+#comingsoon {
+  margin-left: 11 %;
+  width: 71%;
+  padding: 0;
+  margin: 10px 0 10px 0;
+}
+
 /* -------------------------------------------------------------------- */
 /* Blog Content Style                                                   */
 /* -------------------------------------------------------------------- */
