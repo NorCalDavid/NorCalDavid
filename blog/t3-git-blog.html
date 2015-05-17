@@ -89,9 +89,291 @@
 <!-- Blog Body  ********************************************************* -->
 <!-- ******************************************************************** -->
 
-  <div id="comingsoon">
-    <img src="comingsoon.png" alt="Coming Soon">
+  <div id="topimage">
+    <img src="arraysandhashes.png" alt="Arrays vs Hashes">
   </div>
+
+  <p>This week we learned about Arrays and Hashes and while they are very similar, they both have different strengths and weaknesses.  Some people feel that Hashes are better because they are more efficient while others feel that the looping ability of Arrays is beneficial.  From everything that I have read so far, /I feel that they are both beneficial when used properly.  To start out, I would like to talk a little about how to use each.</p>
+
+<hr>
+  <div class="sideimage"><img src="arrays.png" alt="Arrays"></div>
+
+  <p>Arrays are ordered, integer indexed collections that can be used to store any object.  Indices start at 0 and reference positions in the array and negative indices are relative to the end of the array.  Arrays can be created by using the Literal Constructor [] or explicitly by using Array.new.</p>
+
+  <h1><e><u>Literal Notation</e></u></h1>
+  <div class="codeblock">
+    <p><section class="code">new_array = []</section><section class="console">#=> []</section></p>
+    <p><section class="code">new_array = [1, “Two”, 3.0]</section><section class="console">#=> [1,”Two”, 3.0]</section></p>
+  </div>
+
+  <h1><e><u>New Constructor</e></u></h1>
+  <div class="codeblock">
+    <p><section class="code">new_array = Array.new</section><section class="console">#=> []</section></p>
+    <p><section class="code">new_array = Array.new(3)</section><section class="console">#=> [nil, nil, nil]</section></p>
+    <p><section class="code">new_array = Array.new(3, true)</section><section class="console">#=> [true, true, true]</section></p>
+  </div>
+
+  <p>Because Arrays are integer indexed, it is easy to refer to a specific index to assign and/or change the value.  In addition, it is easy to loop through arrays to work with the objects stored in it.  In addition, there are plenty of built-in methods that can be called upon any Array Object.  Below is a list of built-in Array Methods:</p>
+
+  <table class="links_table" cellspacing="0" cellpadding="0">
+  <col width="160" span="5">
+  <tr>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-c-5B-5D">::[]</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-compact">#compact</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-frozen-3F">#frozen?</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-reject-21">#reject!</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-sort-21">#sort!</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-c-new">::new</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-compact-21">#compact!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-hash">#hash</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-repeated_combination">#repeated_combination</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-sort_by-21">#sort_by!</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-c-try_convert">::try_convert</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-concat">#concat</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-include-3F">#include?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-repeated_permutation">#repeated_permutation</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-take">#take</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-26">#&amp;</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-count">#count</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-index">#index</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-replace">#replace</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-take_while">#take_while</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-2A">#*</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-cycle">#cycle</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-initialize_copy">#initialize_copy</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-reverse">#reverse</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-to_a">#to_a</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-2B">#+</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-delete">#delete</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-insert">#insert</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-reverse-21">#reverse!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-to_ary">#to_ary</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-2D">#-</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-delete_at">#delete_at</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-inspect">#inspect</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-reverse_each">#reverse_each</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-to_h">#to_h</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-3C-3C">#&lt;&lt;</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-delete_if">#delete_if</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-join">#join</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-rindex">#rindex</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-to_s">#to_s</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-3C-3D-3E">#&lt;=&gt;</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-drop">#drop</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-keep_if">#keep_if</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-rotate">#rotate</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-transpose">#transpose</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-3D-3D">#==</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-drop_while">#drop_while</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-last">#last</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-rotate-21">#rotate!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-uniq">#uniq</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-5B-5D">#[]</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-each">#each</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-length">#length</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-sample">#sample</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-uniq-21">#uniq!</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-5B-5D-3D">#[]=</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-each_index">#each_index</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-map">#map</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-select">#select</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-unshift">#unshift</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-any-3F">#any?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-empty-3F">#empty?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-map-21">#map!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-select-21">#select!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-values_at">#values_at</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-assoc">#assoc</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-eql-3F">#eql?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-pack">#pack</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-shift">#shift</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-zip">#zip</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-at">#at</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-fetch">#fetch</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-permutation">#permutation</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-shuffle">#shuffle</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-7C">#|</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-bsearch">#bsearch</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-fill">#fill</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-pop">#pop</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-shuffle-21">#shuffle!</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-clear">#clear</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-find_index">#find_index</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-product">#product</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-size">#size</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-collect">#collect</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-first">#first</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-push">#push</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-slice">#slice</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-collect-21">#collect!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-flatten">#flatten</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-rassoc">#rassoc</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-slice-21">#slice!</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-combination">#combination</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-flatten-21">#flatten!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-reject">#reject</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Array.html#method-i-sort">#sort</a></td>
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<div class="sideimage"><img src="hashes.png" alt="Arrays"></div>
+
+  <p style="padding-top: 25px;">Hashes are a collection of key & value pairs like this: “First Name” => “David”.  Hashes are similar to Arrays, except that they are indexed with user defined unique keys.  Since Hashes are not integer indexed, the order in which you iterate through a hash may seem arbitrary and it may not be in the order items were added.  Just like Arrays, Hashes can be created by using the Literal Notation as well as the New Constructor.</p>
+
+  <h1><e><u>Literal Notation</e></u></h1>
+  <div class="codeblock">
+    <p><section class="code">new_hash = {} </section></p>
+    <p><section class="code">new_hash = {“First Name” => “David”, “Last Name” => “Uli”, “Age” => 38}</section></p>
+    <p><section class="code">new_hash = {:first_name => “David”, :last_name => “Uli”, :age => 38}</section></p>
+  </div>
+
+  <h1><e><u>New Constructor</e></u></h1>
+  <div class="codeblock">
+    <p><section class="code">new_hash = Hash.new</section></p>
+    <p><section class="code">new_hash = Hash.new("Test")</p>
+  </div>
+
+  <p>One of the main benefits of using Hashes is speed, they are considered to be much more efficient than other data structures despite the fact they can be difficult to implement.  Similar to Arrays, Hashes have built-in functions that can be called upon to work with both the keys and values stored within them.  Below is a list of the Hash Methods:</p>
+
+  <table class="links_table" cellspacing="0" cellpadding="0">
+  <col width="160" span="5">
+  <tr>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-c-5B-5D">::[]</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-default-3D">#default=</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-flatten">#flatten</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-member-3F">#member?</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-store">#store</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-c-new">::new</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-default_proc">#default_proc</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-has_key-3F">#has_key?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-merge">#merge</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-to_a">#to_a</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-c-try_convert">::try_convert</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-default_proc-3D">#default_proc=</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-has_value-3F">#has_value?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-merge-21">#merge!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-to_h">#to_h</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-3D-3D">#==</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-delete">#delete</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-hash">#hash</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-rassoc">#rassoc</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-to_hash">#to_hash</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-5B-5D">#[]</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-delete_if">#delete_if</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-include-3F">#include?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-rehash">#rehash</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-to_s">#to_s</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-5B-5D-3D">#[]=</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each">#each</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-inspect">#inspect</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-reject">#reject</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-update">#update</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-any-3F">#any?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_key">#each_key</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-invert">#invert</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-reject-21">#reject!</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-value-3F">#value?</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-assoc">#assoc</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_pair">#each_pair</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-keep_if">#keep_if</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-replace">#replace</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-values">#values</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-clear">#clear</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-each_value">#each_value</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-key">#key</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-select">#select</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-values_at">#values_at</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-compare_by_identity">#compare_by_identity</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-empty-3F">#empty?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-key-3F">#key?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-select-21">#select!</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-compare_by_identity-3F">#compare_by_identity?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-eql-3F">#eql?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-keys">#keys</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-shift">#shift</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-default">#default</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-fetch">#fetch</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-length">#length</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Hash.html#method-i-size">#size</a></td>
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<div class="sideimage"><img src="question.png" alt="Question" style="margin-right: 15px;"></div>
+
+  <p style="padding: 25px 0 0 25px;">So the Big Question still remains, which is better Arrays or Hashes???  I don't we have enough experience yet to really make that call.There are definite advantages and disadvantages to both; however, I would love to hear from you.  Do you have a preference?  Let me know and I will write a follow-up to this posting summarizing the responses I receive.</p>
+
+  <script type="text/javascript" src="http://form.jotform.us/jsform/51344507763153"></script>
+
 
 <!-- ******************************************************************** -->
 <!-- Author Information ************************************************* -->

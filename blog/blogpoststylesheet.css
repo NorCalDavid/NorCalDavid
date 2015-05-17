@@ -184,6 +184,38 @@ border-radius: 10px;
   text-align: justify;
   vertical-align: middle;
 }
+.sideimage {
+float: left;
+}
+.codeblock {
+  background-color: #252525;
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  color: white;
+}
+.code {
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+  padding: 5px 5px 5px 5px;
+  text-align: left;
+  display: inline-block;
+}
+.console {
+  color: #21FF17;
+  padding: 5px 5px 5px 5px;
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.links_table {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 80%;
+  color: #6A6A6A;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
 
 /* -------------------------------------------------------------------- */
 /* Author Information                                                   */
