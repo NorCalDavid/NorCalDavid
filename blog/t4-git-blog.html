@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>David Uli's Blog</title>
+  <link href="blogpoststylesheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts Begin ***************************************** -->
+<!-- ******************************************************************** -->
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts End ******************************************* -->
+<!-- ******************************************************************** -->
+
+<div id="wraper">
+
+
+<!-- ******************************************************************** -->
+<!-- Header ************************************************************* -->
+<!-- ******************************************************************** -->
+
+  <div id="headSection">
+    <header>
+    <div class="pPhoto"><img src="profilephoto.png" alt="David Uli"> </div>
+
+      <section class="profileHeader">
+       <h1>David Uli</h1>
+       <h3>Software Developer</h3>
+       <hr>
+
+       <aside class="socialNetworkBar">
+         <div class="socialLinks"><a href="https://www.facebook.com/daviduli" title="Facebook"><img src="facebook.png" alt="Facebook"></a> </div>
+         <div class="socialLinks"><a href="https://www.linkedin.com/in/daviduli" title="LinkedIn"><img src="linkedin.png" alt="LinkedIn"></a> </div>
+         <div class="socialLinks"><a href="https://twitter.com/DUliNorCal" title="Twitter"><img src="twitter.png" alt="Twitter"></a> </div>
+         <div class="socialLinks"><a href="https://plus.google.com/u/0/100339871456714070726/posts" title="google+"><img src="googleplus.png" alt="Google+"></a> </div>
+          <div class="socialLinks"><a href="https://github.com/NorCalDavid" title="GitHub"><img src="github.png" alt="GitHub"></a> </div>
+       </aside>
+
+       <hr>
+      </section>
+
+    </header>
+  </div>
+
+<!-- ******************************************************************** -->
+<!-- Blog Title ********************************************************* -->
+<!-- ******************************************************************** -->
+
+  <div id="content">
+  	 <section id="mainContent">
+        <div id="blogIndexHead">
+          <h1>Phase 0 - Week 4 The Hills are Alive with Enumerables</h1>
+          <h2>Friday, May 22, 2015</h2>
+        </div>
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts Begin ***************************************** -->
+<!-- ******************************************************************** -->
+
+          <section id="social">
+
+
+            <div class="fb-share-button" data-href="https://github.com/NorCalDavid/NorCalDavid.github.io/blob/master/blog/t4-git-blog.html" data-layout="button_count"></div>
+
+            <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="DUliNorCal">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+
+
+          </section>
+
+<!-- ******************************************************************** -->
+<!-- Social Media Scripts End ******************************************* -->
+<!-- ******************************************************************** -->
+
+<!-- ******************************************************************** -->
+<!-- Blog Body  ********************************************************* -->
+<!-- ******************************************************************** -->
+
+  <div class="topimage">
+    <img src="cycleenumerable.png" alt="The Cycle Enumerable">
+  </div>
+
+  <p>Being able to iterate over a collection of data is critical and Ruby provides a very clean and easy to implement method for doing this without the need to keep track of counters and/or indecies. The Enumerable #cycle provides a clean way to iterate through an array infinetly  or x number of times and perform {A Block of Code}.  If a block of code is not passed, #cycle will return an enumerator that can be controled with other Enumerables like #next. </p>
+
+<hr>
+  <div class="sideimage"><img src="soundofmusic.png" alt="Sound Of Music Array"></div>
+
+  <div class="lsideimage"><img src="soundofmusic-topper.png" alt="Maria"></div>
+
+  <p>Now it is time for Maria to bring the Von Trapp children into the 21st Century. By using the Enumerable #cycle, Maria can easily and efficiently make sure the Von Trapps know all of the notes.  If today's lesson requies them to practice the notes 10 times each, a simple #cycle(10) does the trick.  But what if Maria needs even more time up on the hill twirling, all she needs to do is leave off the (10) and the Von Trapps will be stuck in infinite practice.  After she has the basic notes down, Maria can start using Hashes to really expand her lessons and then she can use some of her free time to sew new outfits from more modern curtains.</p>
+
+  <div class="sideimage"><img src="soundofmusichash.png" alt="Sound Of Music Hash"></div>
+
+  <p style="padding-top: 30px;">Unfortunetly, we will have to look into Hashes in another Blog, today we will use #cycle to iterate over Maria's array.  In the first example below, we pass the value (2) to #cycle and it iterates through the array two times.  In the second example, we do not pass a value and #cycle continues to iterate through infinitly.</p>
+
+  <h1 style="clear: both;"><e><u>The Enumerable #cycle</e></u></h1>
+  <div class="codeblock">
+    <p><section class="nlcode">sound_of_music_array.cycle(2) { |i| print "#{i} " }</section>
+      <section class="nlconsole">#=> Do Re Mi Fa Sol La Ti Do Re Mi Fa Sol La Ti</section>
+
+    <p><section class="code">sound_of_music_array.cycle { |i| print "#{i} " }</section><section class="consolenote">(Infinite Loop)</section>
+      <section class="nlconsole">#=> Do Re Mi Fa Sol La Ti Do Re Mi Fa Sol La Ti Do Re Mi Fa Sol La Ti Do Re Mi Fa Sol La Ti ......</section>
+  </div>
+
+  <h1><e><u>Cycle Enumerator #next</e></u></h1>
+  <div class="codeblock">
+    <p><section class="code">cycle_enum = sound_of_music_array.cycle</section><section class="consolenote">Returns a Enumerator</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Do</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Re</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Mi</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Fa</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Sol</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">La</section></p>
+    <p><section class="code">puts cycle_enum.next</section><section class="console">Ti</section></p>
+  </div>
+
+  <p>As you can see, Enumerables and Enumerators can give you a great deal of flexibility when working with collections of data.  The #cycle and #next are just a couple of the Enumerables that are available to you.  Below is a full list:</p>
+
+  <table cellspacing="0" cellpadding="0">
+  <col width="160" span="5">
+  <tr>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-all-3F">#all?</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_cons">#each_cons</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-flat_map">#flat_map</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-min">#min</a></td>
+    <td width="160"><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-select">#select</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-any-3F">#any?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_entry">#each_entry</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-grep">#grep</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-min_by">#min_by</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-slice_after">#slice_after</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-chunk">#chunk</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_slice">#each_slice</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-group_by">#group_by</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-minmax">#minmax</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-slice_before">#slice_before</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-collect">#collect</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_with_index">#each_with_index</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-include-3F">#include?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-minmax_by">#minmax_by</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-slice_when">#slice_when</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-collect_concat">#collect_concat</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_with_object">#each_with_object</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-inject">#inject</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-none-3F">#none?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-sort">#sort</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-count">#count</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-entries">#entries</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-lazy">#lazy</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-one-3F">#one?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-sort_by">#sort_by</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-cycle">#cycle</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-find">#find</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-map">#map</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-partition">#partition</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-take">#take</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-detect">#detect</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-find_all">#find_all</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-max">#max</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reduce">#reduce</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-take_while">#take_while</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-drop">#drop</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-find_index">#find_index</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-max_by">#max_by</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reject">#reject</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-to_a">#to_a</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-drop_while">#drop_while</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-first">#first</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-member-3F">#member?</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reverse_each">#reverse_each</a></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-to_h">#to_h</a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-zip">#zip</a></td>
+  </tr>
+</table>
+
+
+<!-- ******************************************************************** -->
+<!-- Author Information ************************************************* -->
+<!-- ******************************************************************** -->
+
+      <section id="authorInfo">
+          <h1>David Uli</h1>
+          <p><span>Email :</span> mail@daviduli.com</p>
+          <p><span>Website :</span> http://norcaldavid.github.io</p>
+          <p><span>Phone :</span> (504) 201-4466</p>
+      </section>
+
+    </section>
+
+    <div id="sidebar">
+
+<!-- ******************************************************************** -->
+<!-- Sidebar ************************************************************ -->
+<!-- ******************************************************************** -->
+
+      <section id="navmenu">
+      <nav>
+        <ul>
+          <li><a href="http://norcaldavid.github.io" title="Home"><img src="homebutton.png" alt="Home">          Home</a></li>
+          <li><a href="#" title="About Me"><img src="aboutmebutton.png" alt="About Me">          About Me</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/blogindex.html" title="Blog"><img src="blogbutton.png" alt="Blog">          Blog</a></li>
+        </ul>
+      </nav>
+      </section>
+
+      <section id="rateblog">
+        <script type="text/javascript" src="http://form.jotform.us/jsform/51278258600152"></script>
+      </section>
+
+      <nav>
+        <h2>Recent Blog Postings</h2>
+        <ul>
+          <li><a href="http://norcaldavid.github.io/blog/t1-git-blog2.html" title="Link">5/1/15 - Version Control</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/c1-chefs-kitchen2.html" title="Link">5/1/15 - Fireside Chat</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/t2-git-blog.html" title="Link">5/8/15 - The CSS Box Model</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/t3-git-blog.html" title="Link">5/15/15 - Arrays vs Hashes</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/c3-thinking-styles.html" title="Link">5/15/15 - Thinking Styles</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/t4-git-blog.html" title="Link">5/22/15 - Enumberable Music</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/c4-tech-issues.html" title="Link">5/22/15 - Tech Issues - Comming Soon</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+</div>
+
+<footer>
+
+<!-- ******************************************************************** -->
+<!-- Footer ************************************************************* -->
+<!-- ******************************************************************** -->
+
+    <div id="footerBar"><p>2015  Copyright David Uli - <span>All Rights Reserved</span></p></div>
+
+</footer>
+
+</body>
+</html>
