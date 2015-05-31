@@ -27,6 +27,7 @@
 
 <div id="wraper">
 
+
 <!-- ******************************************************************** -->
 <!-- Header ************************************************************* -->
 <!-- ******************************************************************** -->
@@ -61,8 +62,8 @@
   <div id="content">
   	 <section id="mainContent">
         <div id="blogIndexHead">
-          <h1>Phase 0 - Week 2 The CSS Box Model</h1>
-          <h2>Friday, May 8, 2015</h2>
+          <h1>Phase 0 - Week 5 The Cooking Class</h1>
+          <h2>Friday, May 29, 2015</h2>
         </div>
 
 <!-- ******************************************************************** -->
@@ -72,7 +73,7 @@
           <section id="social">
 
 
-            <div class="fb-share-button" data-href="https://github.com/NorCalDavid/NorCalDavid.github.io/blob/master/blog/t2-git-blog.html" data-layout="button_count"></div>
+            <div class="fb-share-button" data-href="https://github.com/NorCalDavid/NorCalDavid.github.io/blob/master/blog/t5-class-blog.html" data-layout="button_count"></div>
 
             <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="DUliNorCal">Tweet</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
@@ -88,23 +89,75 @@
 <!-- Blog Body  ********************************************************* -->
 <!-- ******************************************************************** -->
 
-     <p>This week, we spent a lot of time learning about HTML and CSS.  We created a website using HTML and then built the style sheet required to transform the HTML to recreate an existing website.  In order to successfully complete this task, we needed to have an understanding of many different functions of CSS. In this blog, I will explain the CSS Box Model and how to use it to adjust they way elements are displayed on your website.</p>
+  <div class="topimage">
+    <img src="cookingclasshead.png" alt="The Cooking Class">
+  </div>
 
-    <p>Since all HTML elements can be considered as boxes, the CSS Box Model is important to understand because it will help you successfully position and/or shift items on the page to ensure that they display exactly as you intend.  There are 4 key components of the CSS Box Model that are represented in the below graphic: the content area, <span style="color:#C4DE9E">padding (green area)</span>, <b>border (black line)</b> and <span style = "color:#7FA8D7">margin (blue area)</span>.</p>
+  <p>Since Ruby is an object oriented programming language, it includes Classes and Objects.  The best description that I have found for Classes is that they are the blueprints that define how new Objects are created.  The Class contains variables and methods that are standard to all Objects that are created as instances of that Class.  As an example, today we will talk about the Cooking Class.  This new Class will be the blueprint that we will use to create individual Recipe Objects that can be used to work with recipes for home cooks.  Below is a visual representation of our new Cooking Class and all of the Instance Variables and Instance Methods that it carries with it.</p>
 
-    <img style="text-align:center" src="t2-git-blog-img1.png" alt="CSS Box Model">
+<hr>
+  <div class="sideimage"><img src="cookingclass.png" alt="Cooking Class"></div>
 
-    <p>Think about this as if you were packing an item in a box to move; you would use padding around the item to protect it.  In the CSS Box Model, padding is the spacing between the content area and the border, and it has the same background color as the content area.  An example of a situation where padding is important would be if you have text in a bordered box and the text is too close to the border; in this examply, you will need to increase the padding. Since the margin is the spacing between the border and the margin of the boxes surrounding it, you would adjust the margin if you had two bordered boxes where the borders were too close together.  Remember, all HTML elements are boxes so if you want two boxes to touch you need to adjust the margins of both items.</p>
+  <p>Inside of our new Cooking Class, there are 7 Instance Variables all noted with an @ symbol in front of the variable name.  Instance variables are avaiable to all methods contained within the Class without being passed to the method.  In our Cooking Class, we have Instance Variables for:</p>
 
-    <p> <div id="container">
-     <img src="t2-git-blog-img2.png" title="CSS Box Clock" alt="CSS Box" style="float: right; padding: 0 10px 0 10px;" />
+  <table width="375">
+  <tbody style="font-size: 12px;">
+    <tr>
+      <th scope="col" style="border-bottom: solid; border-width: 1px;">Variable Name</th>
+      <th scope="col" style="border-bottom: solid; border-width: 1px;">Purpose</th>
+    </tr>
+    <tr>
+      <td>@description </td>
+      <td>Contains a Description and/or Overview of the Recipe</td>
+    </tr>
+    <tr>
+      <td>@difficulty</td>
+      <td>Stores the Calculated User Difficulty Rating</td>
+    </tr>
+    <tr>
+      <td>@cook_time</td>
+      <td>Stores the Calulated Cook Time</td>
+    </tr>
+    <tr>
+      <td>@prep_time</td>
+      <td>Stores the Calulated Prep Time</td>
+    </tr>
+    <tr>
+      <td>@rating</td>
+      <td>Stores the Calulated Average User Rating</td>
+    </tr>
+    <tr>
+      <td>@ingredients</td>
+      <td>Stores List of Ingredients passed to the Class</td>
+    </tr>
+    <tr>
+      <td>@instructions</td>
+      <td>Stores the Step by Step Instructions passed to the Class</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>The padding, border and margins for every box can be adjusted together or individually.  As shown in the graphic above, the padding and margin setting were adjusted together and the border settings for the right and bottom were set individually.  If you're anything like me, you will have to stop and try to remember the order of the settings for top, right, bottom and left.  Thanks to my pair for the CSS challenge (Daniela) I just think of it like a clock starting out at the top of the hour. </p>
-    </div>
+  <p>In the initialization of the new Class, some of the Instance Variables listed above are assigned variables that are passed are parameters that are passed when the new Class is created and the remainder are initialized to default values and changed by the Instance Methods contained in the Class.</p>
 
-    <p>In addition to adjusting the spacing of items using padding and margin, there are a bunch of style changes that can be applied to the border.  You can change the thickness color and style (solid, dashed etc) of the border and even give it rounded corners.  Try it out for yourself, add border-radius: 10px; to a box and see what happens, change the radius to 50% and you have a circle. Who said you can't fit a square peg in a round hole? They obviously don't know their CSS!</p>
+  <p>In addition to the Instance Variables, this Class also contains 8 Instance Methods that perform various functions specific to every new object that is created as an instance of the Cooking Class.  For the purpose of this Blog, the specific code for each Instance Method is not critical; however, the Pseudocode for each Method is listed.</p>
 
-    <p>These are just a few things that you can do when you understand the CSS Box Model.  For more information and/or practice with the box model, check out <a href="http://www.w3schools.com/css/css_boxmodel.asp">www.w3schools.com.</a></p>
+  <p>Below is an example of the code that is required to create our new Cooking Class and initialize each of the Instance Variables.  To complete our new Cooking Class, we would follow this block of code with the definitions for each of the Instance Methods and all of the code required to perform the tasks for each.
+
+  <h1 style="clear: both;"><e><u>Defining The Cooking Class</e></u></h1>
+  <div class="codeblock">
+    <p><section class="codeb">Class Cooking</section></p><br>
+    <p><section class="codeb" style="margin-left: 15px;">def initialize(description, ingredients, instructions )</section><section class="consolenoteb">(Accepts Three Parameters)</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@description = description</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@difficulty = "Not Yet Rated"</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@cook_time = "Not Yet Calculated"</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@prep_time = "Not Yet Calculated"</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@rating = "Not Yet Rated"</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@ingredients = ingredients</section></p>
+    <p><section class="codeb" style="margin-left: 30px;">@instructions = instructions</section></p>
+    <p><section class="codeb" style="margin-left: 15px;">end</section></p>
+  </div>
+
+  <p>Once we have our new Cooking Class defined, we can then use it as the blueprint that will define how each of the new Recipe Objects will look. Each new Recipe Object that we create will be instances of the Cooking Class.  It is easy to understand how Classes streamline our code and significantly reduce the amount of code that is required to create new objects.</p>
 
 <!-- ******************************************************************** -->
 <!-- Author Information ************************************************* -->
@@ -148,8 +201,8 @@
           <li><a href="http://norcaldavid.github.io/blog/t3-git-blog.html" title="Link">5/15/15 - Arrays vs Hashes</a></li>
           <li><a href="http://norcaldavid.github.io/blog/c3-thinking-styles.html" title="Link">5/15/15 - Thinking Styles</a></li>
           <li><a href="http://norcaldavid.github.io/blog/t4-git-blog.html" title="Link">5/22/15 - Enumberable Music</a></li>
-          <li><a href="http://norcaldavid.github.io/blog/c4-tech-issues.html" title="Link">5/22/15 - Tech Issues</a></li>
-          <li><a href="http://norcaldavid.github.io/blog/t5-class-blog.html" title="Link">5/29/15 - The Cooking Class</a></li>
+          <li><a href="http://norcaldavid.github.io/blog/c4-tech-issues.html" title="Link">5/22/15 - Tech Issues - </a></li>
+          <li><a href="http://norcaldavid.github.io/blog/t5-class-blog.html" title="Link">5/29/15 - The Cooking Class - </a></li>
           <li><a href="http://norcaldavid.github.io/blog/c5-pairing-feedback.html" title="Link">5/29/15 - Pairing and Feedback</a></li>
         </ul>
       </nav>

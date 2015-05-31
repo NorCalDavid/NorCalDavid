@@ -214,6 +214,14 @@ border-radius: 10px;
   text-align: left;
   display: inline-block;
 }
+.codeb {
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+  text-align: left;
+  display: inline-block;
+}
 .console {
   color: #21FF17;
   padding: 5px 5px 5px 5px;
@@ -224,6 +232,13 @@ border-radius: 10px;
 .consolenote {
   color: #F20F04;
   padding: 5px 5px 5px 5px;
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.consolenoteb {
+  color: #F20F04;
+  padding: 0px 5px 0px 5px;
   text-align: right;
   display: inline-block;
   float: right;
