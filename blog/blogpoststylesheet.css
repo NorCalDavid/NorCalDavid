@@ -184,7 +184,7 @@ border-radius: 10px;
   text-align: justify;
   vertical-align: middle;
 }
-#content #mainContent ul {
+#content #mainContent ul li{
   color: #6A6A6A;
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-style: bold;
