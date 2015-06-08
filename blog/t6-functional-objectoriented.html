@@ -62,7 +62,7 @@
   <div id="content">
   	 <section id="mainContent">
         <div id="blogIndexHead">
-          <h1>Phase 0 - Week 6 Functional vs Object Oriented</h1>
+          <h1>Phase 0 - Week 6 Functional Programming vs Object Oriented Design</h1>
           <h2>Sunday, June 7, 2015</h2>
         </div>
 
@@ -90,9 +90,60 @@
 <!-- ******************************************************************** -->
 
   <div class="topimage">
-    <img src="comingsoon.png" alt="Coming Soon">
+    <img src="fpvsoohead.png" alt="Function Vs Object Oriented Programming">
   </div>
 
+<p>In researching the differences between Functional and Object Oriented Programming styles, I found that there are two very different opinions on which is better.  For the purpose of this Blog, I will talk about some of the advantages and disadvantages for both; however, one common theme is that Object Oriented Design makes it easier to make changes and reuse code.  In the visual representation below, you will see the basic structure for both Functional and Object Oriented Design</P>
+
+<div class="topimage">
+    <img src="FPvsOOD.png" alt="Function Vs Object Oriented Programming">
+</div>
+
+<hr>
+<h1>Functional Programming</h1>
+
+<p>In computer science, functional programming is a programming paradigm — a style of building the structure and elements of computer programs — that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data. The programs are made up of functions. Functions are often not reusable. It is very difficult to copy a function from one program and reuse in another program because the the function is likely to reference the headers, global variables and other functions. In other words, functions are not well-encapsulated as a self-contained reusable unit.</p>
+
+<h3>Advantages</h3>
+<ul>
+  <li>Smaller Size - Object Oriented Programs tend to be much larger</li>
+  <li>Require Less Effort - Object Oriented Programs require a lot more work to create</li>
+  <li>Speed - Because Functional Programs are smaller and generally require less system resources</li>
+</ul>
+
+<h3>Disadvantages</h3>
+<ul>
+  <li>Generally more difficult to pick up for new coders.</li>
+  <li>Functional idioms often do lots of inversion-of-control or laziness, which often has a negative impact on debugging</li>
+  <li>It doesn't match the hardware as well</li>
+</ul>
+
+<hb><hr><hb>
+<h1>Object Oriented Programming</h1>
+
+<p>Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it, and produces output data.</p>
+
+<ul>
+  <li>The basic unit of OOP is a class, which encapsulates both the static attributes and dynamic behaviors within a "box", and specifies the public interface for using these boxes. Since the class is well-encapsulated (compared with the function), it is easier to reuse these classes. In other words, OOP combines the data structures and algorithms of a software entity inside the same box.</li><p></p>
+
+  <li>OOP languages permit higher level of abstraction for solving real-life problems. The traditional procedural language (such as C and Pascal) forces you to think in terms of the structure of the computer (e.g. memory bits and bytes, array, decision, loop) rather than thinking in terms of the problem you are trying to solve. The OOP languages (such as Java, C++, C#) let you think in the problem space, and use software objects to represent and abstract entities of the problem space to solve the problem.</li>
+</ul>
+
+<h3>Advantages</h3>
+<ul>
+  <li>Code Reuse and Recycling: Objects created for Object Oriented Programs can easily be reused in other programs</li>
+  <li>Encapsulation (part 1): Once an Object is created, knowledge of its implementation is not necessary for its use. In older programs, coders needed understand the details of a piece of code before using it (in this or another program)</li>
+  <li>Encapsulation (part 2): Objects have the ability to hide certain parts of themselves from programmers. This prevents programmers from tampering with values they shouldn't. Additionally, the object controls how one interacts with it, preventing other kinds of errors</li>
+  <li>Design Benefits: Large programs are very difficult to write. Object Oriented Programs force designers to go through an extensive planning phase, which makes for better designs with less flaws. In addition, once a program reaches a certain size, Object Oriented Programs are actually easier to program than non-Object Oriented ones</li>
+  <li>Software Maintenance: Programs are not disposable. Legacy code must be dealt with on a daily basis, either to be improved upon (for a new version of an exist piece of software) or made to work with newer computers and software. An Object Oriented Program is much easier to modify and maintain than a non-Object Oriented Program. So although a lot of work is spent before the program is written, less work is needed to maintain it over time</li>
+</ul>
+
+<h3>Disadvantages</h3>
+<ul>
+  <li>Size: Object Oriented programs are much larger than other programs. In the early days of computing, space on hard drives, floppy drives and in memory was at a premium. Today we do not have these restrictions</li>
+  <li>Effort: Object Oriented programs require a lot of work to create. Specifically, a great deal of planning goes into an object oriented program well before a single piece of code is ever written. Initially, this early effort was felt by many to be a waste of time. In addition, because the programs were larger (see above) coders spent more time actually writing the program.</li>
+  <li>Speed: Object Oriented programs are slower than other programs, partially because of their size. Other aspects of Object Oriented Programs also demand more system resources, thus slowing the program down.</li>
+</ul>
 
 <!-- ******************************************************************** -->
 <!-- Author Information ************************************************* -->
