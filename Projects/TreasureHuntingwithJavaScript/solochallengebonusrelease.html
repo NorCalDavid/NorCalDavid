@@ -331,6 +331,55 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
+function moveHunter(direction) {
+
+  function displayNewLocation() {
+    return (("You have moved to " + treasureHunter.location().toString());
+  };
+
+  function displayError() {
+    return (("You are already at the end of the map.").toString());
+  };
+
+  switch(direction) {
+    case 8:
+      if (treasureHunter.positionY === 0) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionY -= 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 2:
+      if (treasureHunter.positionY === (mapSize -1)) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionY += 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 4:
+      if (treasureHunter.positionX === 0) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionX -= 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 6:
+      if (treasureHunter.positionX === (mapSize -1)) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionX += 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+  }
+};
+
 plotTreasureHunter();
 plotTreasure();
 plotMuseum();
@@ -396,48 +445,54 @@ plotRobbers();
 //     }
 // };
 
-// treasureHunter.move = function(direction) {
-//   var displayNewLocation = function() {
-//     return (("You have moved to " + treasureHunter.location().toString());
-//   };
-//   var displayError = function() {
-//     return (("You are already at the end of the map.").toString());
-//   };
-//   switch(direction) {
-//     case 8:
-//       if (treasureHunter.positionY === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 2:
-//       if (treasureHunter.positionY === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 4:
-//       if (treasureHunter.positionX === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 6:
-//       if (treasureHunter.positionX === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//   }
-// };
+function moveHunter(direction) {
+
+  function displayNewLocation() {
+    return (("You have moved to " + treasureHunter.location().toString());
+  };
+
+  function displayError() {
+    return (("You are already at the end of the map.").toString());
+  };
+
+  switch(direction) {
+    case 8:
+      if (treasureHunter.positionY === 0) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionY -= 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 2:
+      if (treasureHunter.positionY === (mapSize -1)) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionY += 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 4:
+      if (treasureHunter.positionX === 0) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionX -= 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+
+    case 6:
+      if (treasureHunter.positionX === (mapSize -1)) {
+        document.getElementById(bottomMessages).appendChild(displayError());
+        break;
+      }
+      treasureHunter.positionX += 1;
+      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      break;
+  }
+};
 
 
 // var captureHunter = function() {
