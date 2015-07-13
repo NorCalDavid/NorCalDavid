@@ -368,34 +368,33 @@ plotRobbers();
 
 // object.addEventListener("keypress", getMove());
 
-// var getMove = function() {
-//   document.addEventListener("keypress", keyPressHandler, false);
-//   // document.addEventListener("keyup", keyUpHandler, false);
+function getMove() {
+  document.addEventListener("keypress", keyPressHandler, false);
 
-//   function keyPressHandler(e) {
-//     switch(e.keyCode) {
-//       case 104 || 38:
-//         upKeyPressed = true;
-//         //treasureHunter.move(8)
-//         break;
-//       case 98 || 40:
-//         downKeyPressed = true;
-//         //treasureHunter.move(2)
-//         break;
-//       case 100 || 37:
-//         leftKeyPressed = true;
-//         //treasureHunter.move(4)
-//         break;
-//       case 102 || 39:
-//         rightKeyPressed = true;
-//         //treasureHunter.move(6)
-//         break;
-//       case 96 || 81:
-//         quitKeyPressed = true;
-//         treasureHunter.move(0)
-//         break;
-//     }
-// };
+  function keyPressHandler(e) {
+    switch(e.keyCode) {
+      case 104 || 38:
+        upKeyPressed = true;
+        //treasureHunter.move(8)
+        break;
+      case 98 || 40:
+        downKeyPressed = true;
+        //treasureHunter.move(2)
+        break;
+      case 100 || 37:
+        leftKeyPressed = true;
+        //treasureHunter.move(4)
+        break;
+      case 102 || 39:
+        rightKeyPressed = true;
+        //treasureHunter.move(6)
+        break;
+      case 96 || 81:
+        quitKeyPressed = true;
+        treasureHunter.move(0)
+        break;
+    }
+};
 
 // treasureHunter.move = function(direction) {
 //   var displayNewLocation = function() {
