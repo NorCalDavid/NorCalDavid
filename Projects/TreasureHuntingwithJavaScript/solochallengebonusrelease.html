@@ -336,33 +336,33 @@ plotTreasure();
 plotMuseum();
 plotRobbers();
 
-document.getElementById(treasureHunterPosition).style.transform = "rotate(10deg)";
+document.getElementById(treasureHunterPosition).style.transform = "rotate(90deg)";
 
-delayStop(5000);
+// delayStop(5000);
 
-var nIntervId;
-var nInterCount = 0;
-var timeoutID;
+// var nIntervId;
+// var nInterCount = 0;
+// var timeoutID;
 
-function delayStop(duration) {
-  timeoutID = window.setTimeout(stopRotation, duration);
-  rotateHunter;
-}
+// function delayStop(duration) {
+//   timeoutID = window.setTimeout(stopRotation, duration);
+//   rotateHunter;
+// }
 
-function rotateHunter() {
-  nIntervId = setInterval(rotateImage(treasureHunterPosition), 500);
-}
+// function rotateHunter() {
+//   nIntervId = setInterval(rotateImage(treasureHunterPosition), 500);
+// }
 
-function rotateImage(elemId) {
-  nInterCount *= 10;
-  var rotationValue = ("rotate(" + nInterCount + ")").toString();
-  var oElem = document.getElementById(elemId).style.transform = rotationValue;
-}
+// function rotateImage(elemId) {
+//   nInterCount *= 10;
+//   var rotationValue = ("rotate(" + nInterCount + ")").toString();
+//   var oElem = document.getElementById(elemId).style.transform = rotationValue;
+// }
 
-function stopRotation() {
-  clearInterval(nIntervId);
-  window.clearTimeout(timeoutID);
-}
+// function stopRotation() {
+//   clearInterval(nIntervId);
+//   window.clearTimeout(timeoutID);
+// }
 
 
 
