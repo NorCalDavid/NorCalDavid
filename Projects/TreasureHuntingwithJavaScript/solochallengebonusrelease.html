@@ -331,7 +331,7 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
-/*function displayNewLocation() {
+function displayNewLocation() {
   return (("You have moved to " + treasureHunter.location().toString());
 };
 
@@ -377,13 +377,13 @@ function moveHunter(direction) {
       bottomMessages.innerHTML += (displayNewLocation());
       break;
   }
-};*/
+};
 
 plotTreasureHunter();
 plotTreasure();
 plotMuseum();
 plotRobbers();
-
+moveHunter(8);
 
 
 // // delayStop(5000);
