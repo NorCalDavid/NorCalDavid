@@ -336,12 +336,15 @@ plotTreasure();
 plotMuseum();
 plotRobbers();
 
+delayStop(5000);
+
 var nIntervId;
 var nInterCount = 0;
 var timeoutID;
 
-function delayStop() {
-  timeoutID = window.setTimeout(stopRotation, 5000);
+function delayStop(duration) {
+  timeoutID = window.setTimeout(stopRotation, duration);
+  rotateHunter;
 }
 
 function rotateHunter() {
