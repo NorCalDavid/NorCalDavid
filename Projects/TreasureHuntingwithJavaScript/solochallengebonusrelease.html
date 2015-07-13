@@ -331,6 +331,11 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
+plotTreasureHunter();
+plotTreasure();
+plotMuseum();
+plotRobbers();
+
 function moveHunter(direction) {
   var displayNewLocation = (("You have moved to " + treasureHunter.location().toString());
   var displayError = (("You are already at the end of the map.").toString());
@@ -374,10 +379,6 @@ function moveHunter(direction) {
   }
 };
 
-plotTreasureHunter();
-plotTreasure();
-plotMuseum();
-plotRobbers();
 moveHunter(8);
 
 
