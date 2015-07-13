@@ -344,38 +344,38 @@ function moveHunter(direction) {
   switch(direction) {
     case 8:
       if (treasureHunter.positionY === 0) {
-        document.getElementById(bottomMessages).appendChild(displayError());
+        bottomMessages.innerHTML += (displayError());
         break;
       }
       treasureHunter.positionY -= 1;
-      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      bottomMessages.innerHTML += (displayNewLocation());
       break;
 
     case 2:
       if (treasureHunter.positionY === (mapSize -1)) {
-        document.getElementById(bottomMessages).appendChild(displayError());
+        bottomMessages.innerHTML += (displayError());
         break;
       }
       treasureHunter.positionY += 1;
-      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      bottomMessages.innerHTML += (displayNewLocation());
       break;
 
     case 4:
       if (treasureHunter.positionX === 0) {
-        document.getElementById(bottomMessages).appendChild(displayError());
+        bottomMessages.innerHTML += (displayError());
         break;
       }
       treasureHunter.positionX -= 1;
-      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      bottomMessages.innerHTML += (displayNewLocation());
       break;
 
     case 6:
       if (treasureHunter.positionX === (mapSize -1)) {
-        document.getElementById(bottomMessages).appendChild(displayError());
+        bottomMessages.innerHTML += (displayError());
         break;
       }
       treasureHunter.positionX += 1;
-      document.getElementById(bottomMessages).appendChild(displayNewLocation());
+      bottomMessages.innerHTML += (displayNewLocation());
       break;
   }
 };
