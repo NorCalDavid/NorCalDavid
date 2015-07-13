@@ -335,9 +335,9 @@ plotTreasureHunter();
 plotTreasure();
 plotMuseum();
 plotRobbers();
-/*
+
 function moveHunter(direction) {
-  var displayNewLocation = (("You have moved to " + treasureHunter.location().toString());
+  var displayNewLocation = (("You have moved to " + treasureHunter.location()).toString());
   var displayError = (("You are already at the end of the map.").toString());
 
   switch(direction) {
@@ -379,8 +379,13 @@ function moveHunter(direction) {
   }
 };
 
-moveHunter(8);
-*/
+var timeoutID;
+
+function delayedMove() {
+  timeoutID = window.setTimeout(moveHunter(8), 2000);
+}
+
+window.clearTimeout(timeoutID);
 
 // // delayStop(5000);
 
