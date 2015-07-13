@@ -336,6 +336,29 @@ plotTreasure();
 plotMuseum();
 plotRobbers();
 
+var nIntervId;
+var nInterCount = 0;
+var timeoutID;
+
+function delayStop() {
+  timeoutID = window.setTimeout(stopRotation, 5000);
+}
+
+function rotateHunter() {
+  nIntervId = setInterval(rotateImage(treasureHunterPosition), 500);
+}
+
+function rotateImage(elemId) {
+  nInterCount *= 10;
+  var rotationValue = ("rotate(" + nInterCount + ")").toString();
+  var oElem = document.getElementById(elemId).style.transform = rotationValue;
+}
+
+function stopRotation() {
+  clearInterval(nIntervId);
+  window.clearTimeout(timeoutID);
+}
+
 
 
 // object.addEventListener("keypress", getMove());
