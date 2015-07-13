@@ -331,50 +331,45 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
-function displayNewLocation() {
-  return (("You have moved to " + treasureHunter.location().toString());
-};
-
-function displayError() {
-  return (("You are already at the end of the map.").toString());
-};
-
 function moveHunter(direction) {
+  var displayNewLocation = (("You have moved to " + treasureHunter.location().toString());
+  var displayError = (("You are already at the end of the map.").toString());
+
   switch(direction) {
     case 8:
       if (treasureHunter.positionY === 0) {
-        bottomMessages.innerHTML += (displayError());
+        bottomMessages.innerHTML += displayError;
         break;
       }
       treasureHunter.positionY -= 1;
-      bottomMessages.innerHTML += (displayNewLocation());
+      bottomMessages.innerHTML += displayNewLocation;
       break;
 
     case 2:
       if (treasureHunter.positionY === (mapSize -1)) {
-        bottomMessages.innerHTML += (displayError());
+        bottomMessages.innerHTML += displayError;
         break;
       }
       treasureHunter.positionY += 1;
-      bottomMessages.innerHTML += (displayNewLocation());
+      bottomMessages.innerHTML += displayNewLocation;
       break;
 
     case 4:
       if (treasureHunter.positionX === 0) {
-        bottomMessages.innerHTML += (displayError());
+        bottomMessages.innerHTML += displayError;
         break;
       }
       treasureHunter.positionX -= 1;
-      bottomMessages.innerHTML += (displayNewLocation());
+      bottomMessages.innerHTML += displayNewLocation;
       break;
 
     case 6:
       if (treasureHunter.positionX === (mapSize -1)) {
-        bottomMessages.innerHTML += (displayError());
+        bottomMessages.innerHTML += displayError;
         break;
       }
       treasureHunter.positionX += 1;
-      bottomMessages.innerHTML += (displayNewLocation());
+      bottomMessages.innerHTML += displayNewLocation;
       break;
   }
 };
