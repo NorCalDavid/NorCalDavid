@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Solo Challenge - Treasure Map</title>
+<link href="solochallengestyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <div id="header">
+    <h1>Treasure Hunting with Javascript</h1>
+    <h2>Dev Bootcamp Project - Phase 0 - Week 7</h2>
+    <h2>Written By: David Uli</h2>
+  </div>
+	<div id="topWindow">
+    <table class="matrix">
+    <tbody>
+      <tr class="head">
+        <th id="blankxHead"></th>
+        <th class="xHead"><h2>X0</h2></th>
+        <th class="xHead"><h2>X1</h2></th>
+        <th class="xHead"><h2>X2</h2></th>
+        <th class="xHead"><h2>X3</h2></th>
+        <th class="xHead"><h2>X4</h2></th>
+        <th class="xHead"><h2>X5</h2></th>
+        <th class="xHead"><h2>X6</h2></th>
+        <th class="xHead"><h2>X7</h2></th>
+        <th class="xHead"><h2>X8</h2></th>
+        <th class="xHead"><h2>X9</h2></th>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y0</h2></th>
+        <td class="mCell" id="y0x0"></td>
+        <td class="mCell" id="y0x1"></td>
+        <td class="mCell" id="y0x2"></td>
+        <td class="mCell" id="y0x3"></td>
+        <td class="mCell" id="y0x4"></td>
+        <td class="mCell" id="y0x5"></td>
+        <td class="mCell" id="y0x6"></td>
+        <td class="mCell" id="y0x7"></td>
+        <td class="mCell" id="y0x8"></td>
+        <td class="mCell" id="y0x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y1</h2></th>
+        <td class="mCell" id="y1x0"></td>
+        <td class="mCell" id="y1x1"></td>
+        <td class="mCell" id="y1x2"></td>
+        <td class="mCell" id="y1x3"></td>
+        <td class="mCell" id="y1x4"></td>
+        <td class="mCell" id="y1x5"></td>
+        <td class="mCell" id="y1x6"></td>
+        <td class="mCell" id="y1x7"></td>
+        <td class="mCell" id="y1x8"></td>
+        <td class="mCell" id="y1x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y2</h2></th>
+        <td class="mCell" id="y2x0"></td>
+        <td class="mCell" id="y2x1"></td>
+        <td class="mCell" id="y2x2"></td>
+        <td class="mCell" id="y2x3"></td>
+        <td class="mCell" id="y2x4"></td>
+        <td class="mCell" id="y2x5"></td>
+        <td class="mCell" id="y2x6"></td>
+        <td class="mCell" id="y2x7"></td>
+        <td class="mCell" id="y2x8"></td>
+        <td class="mCell" id="y2x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y3</h2></th>
+        <td class="mCell" id="y3x0"></td>
+        <td class="mCell" id="y3x1"></td>
+        <td class="mCell" id="y3x2"></td>
+        <td class="mCell" id="y3x3"></td>
+        <td class="mCell" id="y3x4"></td>
+        <td class="mCell" id="y3x5"></td>
+        <td class="mCell" id="y3x6"></td>
+        <td class="mCell" id="y3x7"></td>
+        <td class="mCell" id="y3x8"></td>
+        <td class="mCell" id="y3x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y4</h2></th>
+        <td class="mCell" id="y4x0"></td>
+        <td class="mCell" id="y4x1"></td>
+        <td class="mCell" id="y4x2"></td>
+        <td class="mCell" id="y4x3"></td>
+        <td class="mCell" id="y4x4"></td>
+        <td class="mCell" id="y4x5"></td>
+        <td class="mCell" id="y4x6"></td>
+        <td class="mCell" id="y4x7"></td>
+        <td class="mCell" id="y4x8"></td>
+        <td class="mCell" id="y4x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y5</h2></th>
+        <td class="mCell" id="y5x0"></td>
+        <td class="mCell" id="y5x1"></td>
+        <td class="mCell" id="y5x2"></td>
+        <td class="mCell" id="y5x3"></td>
+        <td class="mCell" id="y5x4"></td>
+        <td class="mCell" id="y5x5"></td>
+        <td class="mCell" id="y5x6"></td>
+        <td class="mCell" id="y5x7"></td>
+        <td class="mCell" id="y5x8"></td>
+        <td class="mCell" id="y5x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y6</h2></th>
+        <td class="mCell" id="y6x0"></td>
+        <td class="mCell" id="y6x1"></td>
+        <td class="mCell" id="y6x2"></td>
+        <td class="mCell" id="y6x3"></td>
+        <td class="mCell" id="y6x4"></td>
+        <td class="mCell" id="y6x5"></td>
+        <td class="mCell" id="y6x6"></td>
+        <td class="mCell" id="y6x7"></td>
+        <td class="mCell" id="y6x8"></td>
+        <td class="mCell" id="y6x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y7</h2></th>
+        <td class="mCell" id="y7x0"></td>
+        <td class="mCell" id="y7x1"></td>
+        <td class="mCell" id="y7x2"></td>
+        <td class="mCell" id="y7x3"></td>
+        <td class="mCell" id="y7x4"></td>
+        <td class="mCell" id="y7x5"></td>
+        <td class="mCell" id="y7x6"></td>
+        <td class="mCell" id="y7x7"></td>
+        <td class="mCell" id="y7x8"></td>
+        <td class="mCell" id="y7x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y8</h2></th>
+        <td class="mCell" id="y8x0"></td>
+        <td class="mCell" id="y8x1"></td>
+        <td class="mCell" id="y8x2"></td>
+        <td class="mCell" id="y8x3"></td>
+        <td class="mCell" id="y8x4"></td>
+        <td class="mCell" id="y8x5"></td>
+        <td class="mCell" id="y8x6"></td>
+        <td class="mCell" id="y8x7"></td>
+        <td class="mCell" id="y8x8"></td>
+        <td class="mCell" id="y8x9"></td>
+      </tr>
+      <tr>
+        <th class="yHead"><h2>Y9</h2></th>
+        <td class="mCell" id="y9x0"></td>
+        <td class="mCell" id="y9x1"></td>
+        <td class="mCell" id="y9x2"></td>
+        <td class="mCell" id="y9x3"></td>
+        <td class="mCell" id="y9x4"></td>
+        <td class="mCell" id="y9x5"></td>
+        <td class="mCell" id="y9x6"></td>
+        <td class="mCell" id="y9x7"></td>
+        <td class="mCell" id="y9x8"></td>
+        <td class="mCell" id="y9x9"></td></td>
+      </tr>
+    </tbody>
+    </table>
+
+  <div class="topMessageWindow">
+        <h2>Game Status</h2>
+        <hr>
+        <h4 id="topMessages"></h4>
+  </div>
+  </div>
+
+  <div id="bottomWindow">
+    <div class="navOptionsWindow">
+      <h3>Navigation Controls</h3>
+      <hr>
+      <table class="navOptionsMenu">
+        <tbody>
+          <tr>
+            <td class="cellBlank">&nbsp;</td>
+            <td class="cell"><img class="navImage" src="up.png" alt="Move Up"></td>
+            <td class="cellBlank">&nbsp;</td>
+          </tr>
+           <tr>
+            <td class="cell"><img class="navImage" src="left.png" alt="Move Left"></td>
+            <td class="cellBlank">&nbsp;</td>
+            <td class="cell"><img class="navImage" src="right.png" alt="Move Right"></td>
+          </tr>
+           <tr>
+            <td class="cellBlank">&nbsp;</td>
+            <td class="cell"><img class="navImage" src="down.png" alt="Move Down"></td>
+            <td class="cellBlank">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="navOptionsSpan">
+        <footer>
+          <tr>
+            <td class="cell"><img class="navImage" src="quit.png" alt="Quit Game"></td>
+          </tr>
+
+        </footer>
+      </table>
+    </div>
+    <div class="bottomMessageWindow">
+      <h3>System Alerts</h3>
+      <hr>
+      <h4 id="bottomMessages"> </h4>
+    </div>
+  </div>
+
+// <script type="text/javascript">
+
+var topMessages = document.getElementById("topMessages");
+var bottomMessages = document.getElementById("bottomMessages");
+
+topMessages.innerHTML = "Preparing Your Treasure Map and Getting Ready to Play?";
+
+var maxTreasure = 5; // Number of Stolen Treasure to Find
+var maxLoot = 2; // Maximum number of items you can carry in lootBag
+var mapSize = 10;
+
+var randomLocation = function(size) {
+  return Math.floor(Math.random() * size);
+};
+
+var map = {
+  treasureHunter: 0,
+  treasure: 0,
+  museum: 0,
+  robber1: 0,
+  robber2: 0
+}
+
+var treasureHunter = {
+   positionX: randomLocation(mapSize/2),
+   positionY: randomLocation(mapSize/2),
+   lootBag: 0,
+   rewardCollected: 0,
+   location: function() {
+   return ("Coordinates:  X" + treasureHunter.positionX + " - Y" + treasureHunter.positionY);
+  }
+};
+
+var robber1 = {
+  positionX: 9,
+  positionY: 0,
+  moveCountX: 0,
+  moveCountY: 0,
+  location: function() {
+   return ("Coordinates:  X" + robber1.positionX + " - Y" + robber1.positionY);
+  }
+};
+
+var robber2 = {
+  positionX: randomLocation(mapSize-1),
+  positionY: randomLocation(mapSize-1),
+  location: function() {
+    return ("Coordinates:  X" + robber2.positionX + " - Y" + robber2.positionY);
+  }
+};
+
+var museum = {
+  positionX: 9,
+  positionY: 9,
+  treasure: 0,
+  location: function() {
+    return ("Coordinates:  X" + museum.positionX + " - Y" + museum.positionY);
+  }
+};
+
+var treasure = {
+  positionX: randomLocation(mapSize / 2),
+  positionY: randomLocation(mapSize / 2),
+  location: function() {
+    return (("Coordinates:  X" + treasure.positionX + " - Y" + treasure.positionY).toString());
+  }
+};
+
+var plotTreasureHunter = function() {
+  if (map.treasureHunter != 0) {
+    var image = document.getElementById(map.treasureHunter);
+    image.removeChild(image.childNodes[0]);
+    map.treasureHunter = 0;
+  }
+  var treasureHunterPosition = ("y" + treasureHunter.positionY + "x" + treasureHunter.positionX).toString();
+  var img = document.createElement("img");
+    img.src = "treasurehunter4.png";
+    img.alt = "Treasure Hunter";
+  document.getElementById(treasureHunterPosition).appendChild(img);
+  var location = (("You are located at " + treasureHunter.location() + "<br>").toString());
+  bottomMessages.innerHTML += (location);
+  map.treasureHunter = treasureHunterPosition
+  topMessages.innerHTML += (map.treasureHunter);
+};
+
+var plotTreasure = function() {
+  var treasurePosition = ("y" + treasure.positionY + "x" + treasure.positionX).toString();
+  var img = document.createElement("img");
+    img.src = "treasurechest.png";
+    img.alt = "Treasure";
+  document.getElementById(treasurePosition).appendChild(img);
+  var location = (("You are looking for the treasure located at " + treasure.location() + "<br>").toString());
+  bottomMessages.innerHTML += (location);
+};
+
+var plotMuseum = function() {
+  var museumPosition = ("y" + museum.positionY + "x" + museum.positionX).toString();
+  var img = document.createElement("img");
+    img.src = "museum.png";
+    img.alt = "Museum";
+  document.getElementById(museumPosition).appendChild(img);
+  var location = (("The museum is located at " + museum.location() + "<br>").toString());
+  bottomMessages.innerHTML += (location);
+};
+
+var plotRobbers = function() {
+  var robber1Position = ("y" + robber1.positionY + "x" + robber1.positionX).toString();
+  var img = document.createElement("img");
+    img.src = "robber.png";
+    img.alt = "Robber 1";
+  document.getElementById(robber1Position).appendChild(img);
+
+  var robber2Position = ("y" + robber2.positionY + "x" + robber2.positionX).toString();
+  var img = document.createElement("img");
+    img.src = "robber2.png";
+    img.alt = "Robber 2";
+  document.getElementById(robber2Position).appendChild(img);
+
+  var location = (("There have been reports of robbers at " + robber1.location() + " and " + robber2.location() + "<br>").toString());
+  bottomMessages.innerHTML += (location);
+};
+
+plotTreasureHunter();
+plotTreasure();
+plotMuseum();
+plotRobbers();
+
+treasureHunter.positionX = randomLocation(mapSize/2);
+treasureHunter.positionY = randomLocation(mapSize/2);
+
+plotTreasureHunter();
+
+// object.addEventListener("keypress", getMove());
+
+// var getMove = function() {
+//   document.addEventListener("keypress", keyPressHandler, false);
+//   // document.addEventListener("keyup", keyUpHandler, false);
+
+//   function keyPressHandler(e) {
+//     switch(e.keyCode) {
+//       case 104 || 38:
+//         upKeyPressed = true;
+//         //treasureHunter.move(8)
+//         break;
+//       case 98 || 40:
+//         downKeyPressed = true;
+//         //treasureHunter.move(2)
+//         break;
+//       case 100 || 37:
+//         leftKeyPressed = true;
+//         //treasureHunter.move(4)
+//         break;
+//       case 102 || 39:
+//         rightKeyPressed = true;
+//         //treasureHunter.move(6)
+//         break;
+//       case 96 || 81:
+//         quitKeyPressed = true;
+//         treasureHunter.move(0)
+//         break;
+//     }
+// };
+
+// treasureHunter.move = function(direction) {
+//   var displayNewLocation = function() {
+//     return (("You have moved to " + treasureHunter.location().toString());
+//   };
+//   var displayError = function() {
+//     return (("You are already at the end of the map.").toString());
+//   };
+//   switch(direction) {
+//     case 8:
+//       if (treasureHunter.positionY === 0) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionY -= 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 2:
+//       if (treasureHunter.positionY === (mapSize -1)) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionY += 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 4:
+//       if (treasureHunter.positionX === 0) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionX -= 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 6:
+//       if (treasureHunter.positionX === (mapSize -1)) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionX += 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//   }
+// };
+
+
+// var captureHunter = function() {
+//   if ((treasureHunter.positionX === robber.positionX && treasureHunter.positionY == robber.positionY) ||
+//       (treasureHunter.positionX === robber2.positionX && treasureHunter.positionY == robber2.positionY)) {
+//     topMessages.innerHTML = "You were captured by robbers. Game Over";
+//     process.exit(code=0);
+//   }
+// };
+
+// var huntForTreasure = function(direction) {
+//     treasureHunter.move(direction);
+//     robber.move();
+//     if (Math.floor(Math.random() * 3) === 2) robber2.move();
+//     captureHunter();
+//     foundTreasure = treasureHunter.getTreasure();
+//     deliveredTreasure = treasureHunter.deliverTreasure();
+//     if (foundTreasure === false && deliveredTreasure === false) {
+//       bottomMessages.innerHTML = ("\nKeep Looking, you haven't found the treasure yet, it is located at " + treasure.location());
+//     }
+// };
+
+
+// // Treasure Hunter Object and all of its Properties and actions.
+// // ----------------------------------------------------------------
+
+// treasureHunter.move = function(direction) {           // Accepts the direction parameter and drives movement
+//   var displayNewLocation = function() {
+//     return ("You have moved to " + treasureHunter.location());
+//   };
+//   var displayError = function() {
+//     return ("You are already at the end of the map.");
+//   };
+//   switch(direction) {
+//     case 8:
+//       if (treasureHunter.positionY === 0) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionY -= 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 2:
+//       if (treasureHunter.positionY === (mapSize -1)) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionY += 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 4:
+//       if (treasureHunter.positionX === 0) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionX -= 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//     case 6:
+//       if (treasureHunter.positionX === (mapSize -1)) {
+//         document.getElementById(bottomMessages).appendChild(displayError());
+//         break;
+//       }
+//       treasureHunter.positionX += 1;
+//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
+//       break;
+//   }
+// };
+
+// treasureHunter.getTreasure = function() {
+//   if (treasureHunter.positionX === treasure.positionX && treasureHunter.positionY === treasure.positionY) {
+//     if (treasureHunter.lootBag >= maxLoot) {
+//       document.getElementById(bottomMessages).appendChild("You can only carry " + maxLoot + " in your loot bag, You must deliver to the museum before collecting additional treasure.");
+//       return false;
+//     }
+//     else {
+//       treasureHunter.lootBag += 1;
+//       document.getElementById(topMessages).appendChild(("\nGreat Job you found the treasure, hurry and brint it back to the museum at " + museum.location()).toString());
+//       treasure.newTreasure();
+//       return true;
+//     }
+//   }
+//   else {
+//     return false;
+//   }
+// };
+
+// treasureHunter.deliverTreasure = function() {
+//   if (treasureHunter.positionX === museum.positionX && treasureHunter.positionY === museum.positionY) {
+//     if (treasureHunter.lootBag >= 1) {
+//       museum.treasure += treasureHunter.lootBag;
+//       document.getElementById(topMessages).appendChild(("\n\nGreat Job you returned " + treasureHunter.lootBag + " pieces of stolen treasure. So far, the museum has " + museum.treasure + " pieces of the stolen treasure safe and sound in the vault.").toString());
+//       // Give Reward
+//       var reward = (Math.floor(Math.random() * 25) * 500);
+//       treasureHunter.rewardCollected += reward;
+//       document.getElementById(bottomMessages).appendChild(("\nAs a thank you for your efforts, the museum has paid you a reward of $" + reward + " .  So far, you have collected $" + treasureHunter.rewardCollected).toString());
+
+//       treasureHunter.lootBag = 0;
+//       return true;
+//     }
+//     else if (treasureHunter.lootBag < 1) {
+//       document.getElementById(bottomMessages).appendChild("Well you managed to get to the museum but without any of the stolen treasure.  Try Again");
+//     return false;
+//     }
+//   }
+//   else {
+//     return false;
+//   }
+// };
+
+
+//   move: function() {
+
+//   if (robber.moveCountX < robber.moveCountY) {
+//     if (treasureHunter.positionX > robber.positionX) {
+//       if (robber.positionX < 9) robber.positionX += 1;
+//     }
+//     else {
+//       if (robber.positionX > 1) robber.positionX -= 1;
+//     }
+
+//     robber.moveCountX += 1;
+//   }
+//   else {
+//     if (treasureHunter.positionY > robber.positionY) {
+//       if (robber.positionY < 9) robber.positionY += 1;
+//     }
+//     else {
+//       if (robber.positionY > 1) robber.positionY -= 1;
+//     }
+
+//     robber.moveCountY += 1;
+//   }
+//   document.getElementById(bottomMessages).appendChild(("\nRobbers are on the move, they have been seen heading your way! " + robber.location()).toString());
+//   }
+// };
+
+// var robber2 = {
+//   positionX: randomLocation(mapSize-1),
+//   positionY: randomLocation(mapSize-1),
+//   location: function() {
+//     return ("Coordinates:  X" + robber.positionX + " - Y" + robber.positionY);
+//   },
+//   move: function() {
+//     robber2.positionX = randomLocation(mapSize-1);
+//     robber2.positionY = randomLocation(mapSize-1);
+//   },
+// };
+
+// // Museum Object and all of its Properties and actions.
+// // ----------------------------------------------------------------
+// var museum = {
+//   positionX: 9,
+//   positionY: 9,
+//   treasure: 0,
+//   location: function() {
+//     return ("Coordinates:  X" + museum.positionX + " - Y" + museum.positionY);
+//   }
+// };
+
+// // Treasure Object and all of its Properties and actions.
+// // ----------------------------------------------------------------
+// var treasure = {
+//   positionX: randomLocation(mapSize / 2),
+//   positionY: randomLocation(mapSize / 2),
+//   location: function() {
+//     return ("Coordinates:  X" + treasure.positionX + " - Y" + treasure.positionY);
+//   },
+//   newTreasure: function() {                 // Assigns a new treasure to a random location until goals are met
+//     if ((museum.treasure + treasureHunter.lootBag) >= maxTreasure) {
+//       document.getElementById(topMessages).appendChild("\nAll Treasure has been found, you must deliver the treasure to the museum without being captured.");
+//       treasure.positionX = 0;
+//       treasure.positionY = 0;
+//     }
+//     else {
+//       treasure.positionX = randomLocation(mapSize / 2);
+//       treasure.positionY = randomLocation(mapSize / 2);
+//       document.getElementById(bottomMessages).appendChild("\nWe have received reports that stolen treasure has been found at " + treasure.location());
+//     };
+//   }
+// };
+
+// // ----------------------------------------------------------------
+// // ----------------------------------------------------------------
+// // Game Operation
+// // ----------------------------------------------------------------
+// // ----------------------------------------------------------------
+
+// document.getElementById(bottomMessages).appendChild("Would You Like To Play");
+
+// var playGame = function() {
+//   var exitGame = false;
+//   while (exitGame === false) {
+//     huntForTreasure(getMove());
+//     if (museum.treasure >= maxTreasure) {
+//       bottomMessages.innerHTML = (("\n\nCongratulations You Collected All of The Stolen Treasure and Collected $" + treasureHunter.rewardCollected + " in Rewards. Great Job!").toString();
+//       bottomMessages.innerHTML += ("\n\nThank You For Playing.");
+//       exitGame = true;
+//     }
+//     else {
+//       exitGame = false;
+//     }
+//  }
+// };
+
+
+// playGame();
+
+</script>
+
+</body>
+</html>
