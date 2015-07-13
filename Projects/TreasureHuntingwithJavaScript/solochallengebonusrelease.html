@@ -212,10 +212,10 @@
 var topMessages = document.getElementById("topMessages");
 var bottomMessages = document.getElementById("bottomMessages");
 
-topMessages.innerHTML = "Preparing Your Treasure Map and Getting Ready to Play?";
+/*topMessages.innerHTML = "Preparing Your Treasure Map and Getting Ready to Play?";*/
 
-var maxTreasure = 5; // Number of Stolen Treasure to Find
-var maxLoot = 2; // Maximum number of items you can carry in lootBag
+var maxTreasure = 5;
+var maxLoot = 2;
 var mapSize = 10;
 
 var randomLocation = function(size) {
@@ -331,54 +331,54 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
-// function moveHunter(direction) {
+/*function moveHunter(direction) {
 
-//   function displayNewLocation() {
-//     return (("You have moved to " + treasureHunter.location().toString());
-//   };
+  function displayNewLocation() {
+    return (("You have moved to " + treasureHunter.location().toString());
+  };
 
-//   function displayError() {
-//     return (("You are already at the end of the map.").toString());
-//   };
+  function displayError() {
+    return (("You are already at the end of the map.").toString());
+  };
 
-//   switch(direction) {
-//     case 8:
-//       if (treasureHunter.positionY === 0) {
-//         bottomMessages.innerHTML += (displayError());
-//         break;
-//       }
-//       treasureHunter.positionY -= 1;
-//       bottomMessages.innerHTML += (displayNewLocation());
-//       break;
+  switch(direction) {
+    case 8:
+      if (treasureHunter.positionY === 0) {
+        bottomMessages.innerHTML += (displayError());
+        break;
+      }
+      treasureHunter.positionY -= 1;
+      bottomMessages.innerHTML += (displayNewLocation());
+      break;
 
-//     case 2:
-//       if (treasureHunter.positionY === (mapSize -1)) {
-//         bottomMessages.innerHTML += (displayError());
-//         break;
-//       }
-//       treasureHunter.positionY += 1;
-//       bottomMessages.innerHTML += (displayNewLocation());
-//       break;
+    case 2:
+      if (treasureHunter.positionY === (mapSize -1)) {
+        bottomMessages.innerHTML += (displayError());
+        break;
+      }
+      treasureHunter.positionY += 1;
+      bottomMessages.innerHTML += (displayNewLocation());
+      break;
 
-//     case 4:
-//       if (treasureHunter.positionX === 0) {
-//         bottomMessages.innerHTML += (displayError());
-//         break;
-//       }
-//       treasureHunter.positionX -= 1;
-//       bottomMessages.innerHTML += (displayNewLocation());
-//       break;
+    case 4:
+      if (treasureHunter.positionX === 0) {
+        bottomMessages.innerHTML += (displayError());
+        break;
+      }
+      treasureHunter.positionX -= 1;
+      bottomMessages.innerHTML += (displayNewLocation());
+      break;
 
-//     case 6:
-//       if (treasureHunter.positionX === (mapSize -1)) {
-//         bottomMessages.innerHTML += (displayError());
-//         break;
-//       }
-//       treasureHunter.positionX += 1;
-//       bottomMessages.innerHTML += (displayNewLocation());
-//       break;
-//   }
-// };
+    case 6:
+      if (treasureHunter.positionX === (mapSize -1)) {
+        bottomMessages.innerHTML += (displayError());
+        break;
+      }
+      treasureHunter.positionX += 1;
+      bottomMessages.innerHTML += (displayNewLocation());
+      break;
+  }
+};*/
 
 plotTreasureHunter();
 plotTreasure();
@@ -444,56 +444,6 @@ plotRobbers();
 // //         break;
 // //     }
 // // };
-
-// function moveHunter(direction) {
-
-//   function displayNewLocation() {
-//     return (("You have moved to " + treasureHunter.location().toString());
-//   };
-
-//   function displayError() {
-//     return (("You are already at the end of the map.").toString());
-//   };
-
-//   switch(direction) {
-//     case 8:
-//       if (treasureHunter.positionY === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-
-//     case 2:
-//       if (treasureHunter.positionY === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-
-//     case 4:
-//       if (treasureHunter.positionX === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-
-//     case 6:
-//       if (treasureHunter.positionX === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//   }
-// };
-
 
 // var captureHunter = function() {
 //   if ((treasureHunter.positionX === robber.positionX && treasureHunter.positionY == robber.positionY) ||
