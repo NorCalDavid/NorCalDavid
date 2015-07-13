@@ -379,13 +379,16 @@ function moveHunter(direction) {
   }
 };
 
-var timeoutID;
+var date = new Date();
+var curDate = null;
+do {
+  curDate = new Date();
+} while(curDate-date < 2000);
 
-function delayedMove() {
-  timeoutID = window.setTimeout(moveHunter(8), 2000);
-}
+moveHunter(8);
+plotTreasureHunter();
 
-window.clearTimeout(timeoutID);
+};
 
 // // delayStop(5000);
 
