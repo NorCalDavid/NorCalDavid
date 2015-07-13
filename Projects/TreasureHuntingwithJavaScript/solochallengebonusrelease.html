@@ -285,9 +285,9 @@ var plotTreasureHunter = function() {
   var img = document.createElement("img");
     img.src = "treasurehunter4.png";
     img.alt = "Treasure Hunter";
+
   document.getElementById(treasureHunterPosition).appendChild(img);
 
-  document.getElementById(treasureHunterPosition).style.backgroundColor = "#750B0B";
   var location = (("You are located at " + treasureHunter.location() + "<br>").toString());
   bottomMessages.innerHTML += (location);
   map.treasureHunter = treasureHunterPosition
