@@ -331,16 +331,15 @@ var plotRobbers = function() {
   bottomMessages.innerHTML += (location);
 };
 
+function displayNewLocation() {
+  return (("You have moved to " + treasureHunter.location().toString());
+};
+
+function displayError() {
+  return (("You are already at the end of the map.").toString());
+};
+
 function moveHunter(direction) {
-
-  function displayNewLocation() {
-    return (("You have moved to " + treasureHunter.location().toString());
-  };
-
-  function displayError() {
-    return (("You are already at the end of the map.").toString());
-  };
-
   switch(direction) {
     case 8:
       if (treasureHunter.positionY === 0) {
