@@ -276,11 +276,11 @@ var treasure = {
 };
 
 var plotTreasureHunter = function() {
-  if (map.treasureHunter != 0) {
-    var image = document.getElementById(map.treasureHunter);
-    image.removeChild(image.childNodes[0]);
-    map.treasureHunter = 0;
-  }
+  //if (map.treasureHunter != 0) {
+  //  var image = document.getElementById(map.treasureHunter);
+  //  image.removeChild(image.childNodes[0]);
+  //  map.treasureHunter = 0;
+  //}
   var treasureHunterPosition = ("y" + treasureHunter.positionY + "x" + treasureHunter.positionX).toString();
   var img = document.createElement("img");
     img.src = "treasurehunter4.png";
@@ -288,8 +288,8 @@ var plotTreasureHunter = function() {
   document.getElementById(treasureHunterPosition).appendChild(img);
   var location = (("You are located at " + treasureHunter.location() + "<br>").toString());
   bottomMessages.innerHTML += (location);
-  map.treasureHunter = treasureHunterPosition
-  topMessages.innerHTML += (map.treasureHunter);
+  //map.treasureHunter = treasureHunterPosition
+  //topMessages.innerHTML += (map.treasureHunter);
 };
 
 var plotTreasure = function() {
