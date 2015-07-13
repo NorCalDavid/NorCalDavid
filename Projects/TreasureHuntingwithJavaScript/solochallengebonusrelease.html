@@ -292,6 +292,7 @@ var plotTreasureHunter = function() {
   bottomMessages.innerHTML += (location);
   map.treasureHunter = treasureHunterPosition
   topMessages.innerHTML += (map.treasureHunter);
+  document.getElementById(treasureHunterPosition).style.transform = "rotate(90deg)";
 };
 
 var plotTreasure = function() {
@@ -336,7 +337,7 @@ plotTreasure();
 plotMuseum();
 plotRobbers();
 
-document.getElementById(treasureHunterPosition).style.transform = "rotate(90deg)";
+
 
 // delayStop(5000);
 
