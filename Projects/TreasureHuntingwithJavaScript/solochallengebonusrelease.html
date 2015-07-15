@@ -1,19 +1,117 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Solo Challenge - Treasure Map</title>
-<link href="solochallengestyle.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <title>Solo Challenge - Treasure Map</title>
+  <link href="solochallengestyle.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript">
+
+    /* Initialize Global Variables */
+
+    window.maxTreasure = 5;
+    window.maxLoot = 2;
+    window.mapSize = 10;
+    window.buttonList = ["up", "down", "left", "right"];
+
+    window.randomLocation = function(size) {
+      return Math.floor(Math.random() * size);
+    };
+
+    window.map = {
+                    hunter: 0,
+                    treasure: 0,
+                    museum: 0,
+                    robber1: 0,
+                    robber2: 0
+                  };
+
+    window.treasureHunter = {
+                              positionX: window.randomLocation(mapSize/2),
+                              positionY: window.randomLocation(mapSize/2),
+                              position: function() {
+                                return ("y" + this.positionY + "x" + this.positionX);
+                              },
+                              lootBag: 0,
+                              rewardCollected: 0,
+                              location: function() {
+                                return ("Coordinates:  X" + this.positionX + " - Y" + this.positionY);
+                              }
+                            };
+
+    window.treasure = {
+                        positionX: window.randomLocation(mapSize / 2),
+                        positionY: window.randomLocation(mapSize / 2),
+                        position: function() {
+                                return ("y" + this.positionY + "x" + this.positionX);
+                              },
+                        location: function() {
+                          return ("Coordinates:  X" + this.positionX + " - Y" + this.positionY);
+                        },
+                      };
+
+    window.robber1 = {
+                        positionX: 9,
+                        positionY: 0,
+                        position: function() {
+                                return ("y" + this.positionY + "x" + this.positionX);
+                              },
+                        moveCountX: 0,
+                        moveCountY: 0,
+                        location: function() {
+                         return ("Coordinates:  X" + this.positionX + " - Y" + this.positionY);
+                        }
+                      };
+
+    window.robber2 = {
+                        positionX: window.randomLocation(mapSize-1),
+                        positionY: window.randomLocation(mapSize-1),
+                        position: function() {
+                                return ("y" + this.positionY + "x" + this.positionX);
+                              },
+                        location: function() {
+                          return ("Coordinates:  X" + this.positionX + " - Y" + this.positionY);
+                        }
+                      };
+
+    window.museum = {
+                      positionX: 9,
+                      positionY: 9,
+                      position: function() {
+                                return ("y" + this.positionY + "x" + this.positionX);
+                              },
+                      treasure: 0,
+                      location: function() {
+                        return ("Coordinates:  X" + this.positionX + " - Y" + this.positionY);
+                      }
+                    };
+
+    window.distance = {
+                          robber1: function() {
+                            var xd = treasureHunter.positionX - robber1.positionX;
+                            var yd = treasureHunter.positionY - robber1.positionY;
+                            return Math.round(Math.sqrt((xd*xd) + (yd*yd)));
+                          },
+                          robber2: function() {
+                            var xd = treasureHunter.positionX - robber2.positionX;
+                            var yd = treasureHunter.positionY - robber2.positionY;
+                            return Math.round(Math.sqrt((xd*xd) + (yd*yd)));
+                          }
+                        };
+
+</script>
 </head>
-<body>
+<body id="body">
 
   <div id="header">
-    <h1>Treasure Hunting with Javascript</h1>
-    <h2>Dev Bootcamp Project - Phase 0 - Week 7</h2>
-    <h2>Written By: David Uli</h2>
+      <h1>Treasure Hunting with Javascript</h1>
+      <h2>Dev Bootcamp Project - Phase 0 - Week 7</h2>
+      <h2>Written By: David Uli</h2>
   </div>
+
+  <div id="window">
 	<div id="topWindow">
-    <table class="matrix">
+    <table class="matrix" id="map">
     <tbody>
       <tr class="head">
         <th id="blankxHead"></th>
@@ -161,7 +259,7 @@
     </tbody>
     </table>
 
-  <div class="topMessageWindow">
+  <div class="topMessageWindow" id="msgWindow">
         <h2>Game Status</h2>
         <hr>
         <h4 id="topMessages"></h4>
@@ -173,20 +271,21 @@
       <h3>Navigation Controls</h3>
       <hr>
       <table class="navOptionsMenu">
+
         <tbody>
           <tr>
             <td class="cellBlank">&nbsp;</td>
-            <td class="cell"><img class="navImage" src="up.png" alt="Move Up"></td>
+            <td class="navButton"><button id="up" onclick="up()">UP</button></td>
             <td class="cellBlank">&nbsp;</td>
           </tr>
            <tr>
-            <td class="cell"><img class="navImage" src="left.png" alt="Move Left"></td>
+            <td class="navButton"><button id="left" onclick="left()">LEFT</button></td>
             <td class="cellBlank">&nbsp;</td>
-            <td class="cell"><img class="navImage" src="right.png" alt="Move Right"></td>
+            <td class="navButton"><button id="right" onclick="right()">RIGHT</button></td>
           </tr>
            <tr>
             <td class="cellBlank">&nbsp;</td>
-            <td class="cell"><img class="navImage" src="down.png" alt="Move Down"></td>
+            <td class="navButton"><button id="down" onclick="down()">DOWN</button></td>
             <td class="cellBlank">&nbsp;</td>
           </tr>
         </tbody>
@@ -194,465 +293,309 @@
       <table class="navOptionsSpan">
         <footer>
           <tr>
-            <td class="cell"><img class="navImage" src="quit.png" alt="Quit Game"></td>
+            <td id="gameButton"><button id="game" onclick="newGame()">NEW GAME</button></td>
           </tr>
 
         </footer>
       </table>
     </div>
-    <div class="bottomMessageWindow">
+    <div class="bottomMessageWindow" id="bottomMessageWindow">
       <h3>System Alerts</h3>
       <hr>
       <h4 id="bottomMessages"> </h4>
     </div>
   </div>
+</div>
+<script type="text/javascript">
 
-// <script type="text/javascript">
+window.topMessages = document.getElementById("topMessages");
+window.bottomMessages = document.getElementById("bottomMessages");
 
-var topMessages = document.getElementById("topMessages");
-var bottomMessages = document.getElementById("bottomMessages");
+function warn(element, duration) {
+  var location = element.toString();
+  var x = document.getElementById(location);
+  var defBackground = x.style.backgroundColor;
+  var myVar = setInterval(function(){ setColor() }, 200);
+  var timer;
 
-/*topMessages.innerHTML = "Preparing Your Treasure Map and Getting Ready to Play?";*/
+  function setColor() {
+    x.style.backgroundColor = x.style.backgroundColor == defBackground ? "#750B0B" : defBackground;
+  }
+  timer = setTimeout(stopColor, duration);
 
-var maxTreasure = 5;
-var maxLoot = 2;
-var mapSize = 10;
-
-var randomLocation = function(size) {
-  return Math.floor(Math.random() * size);
-};
-
-var map = {
-  treasureHunter: 0,
-  treasure: 0,
-  museum: 0,
-  robber1: 0,
-  robber2: 0
+  function stopColor() {
+      clearInterval(myVar);
+      x.style.backgroundColor = defBackground;
+  }
 }
 
-var treasureHunter = {
-   positionX: randomLocation(mapSize/2),
-   positionY: randomLocation(mapSize/2),
-   lootBag: 0,
-   rewardCollected: 0,
-   location: function() {
-   return ("Coordinates:  X" + treasureHunter.positionX + " - Y" + treasureHunter.positionY);
-  }
-};
-
-var robber1 = {
-  positionX: 9,
-  positionY: 0,
-  moveCountX: 0,
-  moveCountY: 0,
-  location: function() {
-   return ("Coordinates:  X" + robber1.positionX + " - Y" + robber1.positionY);
-  }
-};
-
-var robber2 = {
-  positionX: randomLocation(mapSize-1),
-  positionY: randomLocation(mapSize-1),
-  location: function() {
-    return ("Coordinates:  X" + robber2.positionX + " - Y" + robber2.positionY);
-  }
-};
-
-var museum = {
-  positionX: 9,
-  positionY: 9,
-  treasure: 0,
-  location: function() {
-    return ("Coordinates:  X" + museum.positionX + " - Y" + museum.positionY);
-  }
-};
-
-var treasure = {
-  positionX: randomLocation(mapSize / 2),
-  positionY: randomLocation(mapSize / 2),
-  location: function() {
-    return (("Coordinates:  X" + treasure.positionX + " - Y" + treasure.positionY).toString());
-  }
-};
-
-var plotTreasureHunter = function() {
-  if (map.treasureHunter != 0) {
-    var image = document.getElementById(map.treasureHunter);
-    image.removeChild(image.childNodes[0]);
-    map.treasureHunter = 0;
-  }
-  var treasureHunterPosition = ("y" + treasureHunter.positionY + "x" + treasureHunter.positionX).toString();
+function plotTreasureHunter() {
   var img = document.createElement("img");
     img.src = "treasurehunter4.png";
     img.alt = "Treasure Hunter";
 
-  document.getElementById(treasureHunterPosition).appendChild(img);
+  document.getElementById(treasureHunter.position()).appendChild(img);
 
-  var location = (("You are located at " + treasureHunter.location() + "<br>").toString());
-  bottomMessages.innerHTML += (location);
-  map.treasureHunter = treasureHunterPosition
-  topMessages.innerHTML += (map.treasureHunter);
+  map.hunter = treasureHunter.position()
 };
 
 var plotTreasure = function() {
-  var treasurePosition = ("y" + treasure.positionY + "x" + treasure.positionX).toString();
   var img = document.createElement("img");
     img.src = "treasurechest.png";
-    img.alt = "Treasure";
-  document.getElementById(treasurePosition).appendChild(img);
-  var location = (("You are looking for the treasure located at " + treasure.location() + "<br>").toString());
-  bottomMessages.innerHTML += (location);
+    img.alt = "Treasure Chest";
+
+  document.getElementById(treasure.position()).appendChild(img);
+
+  map.treasure = treasure.position()
 };
 
 var plotMuseum = function() {
-  var museumPosition = ("y" + museum.positionY + "x" + museum.positionX).toString();
   var img = document.createElement("img");
     img.src = "museum2.png";
     img.alt = "Museum";
-  document.getElementById(museumPosition).appendChild(img);
-  var location = (("The museum is located at " + museum.location() + "<br>").toString());
-  bottomMessages.innerHTML += (location);
+
+  document.getElementById(museum.position()).appendChild(img);
+
+  map.museum = museum.position()
 };
 
 var plotRobbers = function() {
-  var robber1Position = ("y" + robber1.positionY + "x" + robber1.positionX).toString();
+
   var img = document.createElement("img");
     img.src = "robber.png";
-    img.alt = "Robber 1";
-  document.getElementById(robber1Position).appendChild(img);
+    img.alt = "Robber1";
 
-  var robber2Position = ("y" + robber2.positionY + "x" + robber2.positionX).toString();
+  document.getElementById(robber1.position()).appendChild(img);
+  map.robber1 = robber1.position()
+
   var img = document.createElement("img");
     img.src = "robber2.png";
-    img.alt = "Robber 2";
-  document.getElementById(robber2Position).appendChild(img);
+    img.alt = "Robber2";
 
-  var location = (("<br>There have been reports of robbers at " + robber1.location() + " and " + robber2.location() + "<br>").toString());
-  bottomMessages.innerHTML += (location);
+  document.getElementById(robber2.position()).appendChild(img);
+  map.robber2 = robber2.position()
+
 };
 
-plotTreasureHunter();
-plotTreasure();
-plotMuseum();
-plotRobbers();
+function updateMap() {
+  document.getElementById("body").style.backgroundColor = "#D5D5D5"
+
+  var imgElements = document.querySelectorAll("img");
+
+  for(var i=0; i<imgElements.length; i++) {
+    var img = imgElements[i];
+    img.parentNode.removeChild(img);
+  };
+
+  plotTreasureHunter();
+  plotTreasure();
+  plotMuseum();
+  plotRobbers();
+};
+
+updateMap();
+
+function newTreasure() {
+  if ((museum.treasure + treasureHunter.lootBag) >= maxTreasure) {
+    topMessages.innerHTML += ("<br>All Treasure has been found, deliver the treasure to the museum without being captured.");
+    treasure.positionX = 0;
+    treasure.positionY = 0;
+  }
+  else {
+    treasure.positionX = randomLocation(mapSize / 2);
+    treasure.positionY = randomLocation(mapSize / 2);
+  }
+};
+
+function moveRobbers() {
+  if (robber1.moveCountX < robber1.moveCountY) {
+    if (treasureHunter.positionX > robber1.positionX) {
+      if (robber1.positionX < 9) robber1.positionX += 1;
+    }
+    else {
+      if (robber1.positionX > 1) robber1.positionX -= 1;
+    }
+    robber1.moveCountX += 1;
+  }
+  else {
+    if (treasureHunter.positionY > robber1.positionY) {
+      if (robber1.positionY < 9) robber1.positionY += 1;
+    }
+    else {
+      if (robber1.positionY > 1) robber1.positionY -= 1;
+    }
+    robber1.moveCountY += 1;
+  }
+  if (distance.robber1() <= 2) warn(robber1.position(), 1500);
+
+  if (Math.floor(Math.random() * 3) === 2) {
+    robber2.positionX = randomLocation(mapSize-1);
+    robber2.positionY = randomLocation(mapSize-1);
+    if (distance.robber2() <= 2) warn(robber2.position(), 1500);
+  }
+};
 
 function moveHunter(direction) {
-  var displayNewLocation = (("You have moved to " + treasureHunter.location()).toString());
   var displayError = (("You are already at the end of the map.").toString());
 
   switch(direction) {
-    case 8:
-      if (treasureHunter.positionY === 0) {
+    case "up":
+      if (window.treasureHunter.positionY === 0) {
         bottomMessages.innerHTML += displayError;
         break;
       }
-      treasureHunter.positionY -= 1;
-      bottomMessages.innerHTML += displayNewLocation;
+      window.treasureHunter.positionY -= 1;
       break;
 
-    case 2:
-      if (treasureHunter.positionY === (mapSize -1)) {
+    case "down":
+      if (window.treasureHunter.positionY === (mapSize -1)) {
         bottomMessages.innerHTML += displayError;
         break;
       }
-      treasureHunter.positionY += 1;
-      bottomMessages.innerHTML += displayNewLocation;
+      window.treasureHunter.positionY += 1;
       break;
 
-    case 4:
-      if (treasureHunter.positionX === 0) {
+    case "left":
+      if (window.treasureHunter.positionX === 0) {
         bottomMessages.innerHTML += displayError;
         break;
       }
-      treasureHunter.positionX -= 1;
-      bottomMessages.innerHTML += displayNewLocation;
+      window.treasureHunter.positionX -= 1;
       break;
 
-    case 6:
-      if (treasureHunter.positionX === (mapSize -1)) {
+    case "right":
+      if (window.treasureHunter.positionX === (mapSize -1)) {
         bottomMessages.innerHTML += displayError;
         break;
       }
-      treasureHunter.positionX += 1;
-      bottomMessages.innerHTML += displayNewLocation;
+      window.treasureHunter.positionX += 1;
       break;
   }
 };
 
-var date = new Date();
-var curDate = null;
-do {
-  curDate = new Date();
-} while(curDate-date < 2000);
+function captureHunter() {
+  if (treasureHunter.position() === robber1.position() || treasureHunter.position() === robber2.position()) {
+    topMessages.innerHTML += "You were captured by robbers. Game Over";
+    warn("map", 4000);
+    document.getElementById("msgWindow").style.backgroundColor = "#750B0B";
+    document.getElementById("bottomMessageWindow").style.visibility = "hidden";
+    return true;
+  }
+  else {
+    return false;
+  }
+};
 
-moveHunter(8);
-plotTreasureHunter();
+function huntForTreasure(direction) {
+    move(direction);
+    captureHunter();
+    deliverTreasure();
+};
 
-// // delayStop(5000);
+function getTreasure() {
+  if (treasureHunter.position() === treasure.position()) {
+    if (treasureHunter.lootBag >= maxLoot) {
+      bottomMessages.innerHTML += ("You can only carry " + maxLoot + " in your loot bag, You must deliver to the museum before collecting additional treasure.");
+      return false;
+    }
+    else {
+      treasureHunter.lootBag += 1;
+      topMessages.innerHTML += ("<br>Great Job you found the treasure, hurry and brint it back to the museum at " + museum.location());
+      return true;
+    }
+  }
+  return false;
+};
 
-// // var nIntervId;
-// // var nInterCount = 0;
-// // var timeoutID;
+function deliverTreasure() {
+  if (treasureHunter.position() === museum.position()) {
+    if (treasureHunter.lootBag >= 1) {
+      museum.treasure += treasureHunter.lootBag;
+      topMessages.innerHTML += ("<br>Great Job you returned " + treasureHunter.lootBag + " pieces of stolen treasure. So far, the museum has " + museum.treasure + " pieces of the stolen treasure safe and sound in the vault.");
+      // Give Reward
+      var reward = (Math.floor(Math.random() * 25) * 5000);
+      treasureHunter.rewardCollected += reward;
+      topMessages.innerHTML += ("<br>As a thank you for your efforts, the museum has paid you a reward of $" + reward + " .  So far, you have collected $" + treasureHunter.rewardCollected);
+      treasureHunter.lootBag = 0;
+    }
+    else if (treasureHunter.lootBag < 1) {
+      bottomMessages.innerHTML += ("Well you managed to get to the museum but without any of the stolen treasure.  Try Again");
+    }
+  }
+};
 
-// // function delayStop(duration) {
-// //   timeoutID = window.setTimeout(stopRotation, duration);
-// //   rotateHunter;
-// // }
+function resetButton(element) {
+  var button = document.createElement("button");
+  var text = document.createTextNode(element)
+  button.appendChild(text)
+  button.onclick = (element + "()").toString();
+  document.getElementById((element + "Button").toString()).appendChild(button);
+};
 
-// // function rotateHunter() {
-// //   nIntervId = setInterval(rotateImage(treasureHunterPosition), 500);
-// // }
+function hideButton(element) {
+    var button = document.getElementById(element);
+    button.onclick = null;
+    button.removeChild(button.childNodes[0]);
+};
 
-// // function rotateImage(elemId) {
-// //   nInterCount *= 10;
-// //   var rotationValue = ("rotate(" + nInterCount + ")").toString();
-// //   var oElem = document.getElementById(elemId).style.transform = rotationValue;
-// // }
+function endGame() {
+  buttonList.forEach(hideButton);
 
-// // function stopRotation() {
-// //   clearInterval(nIntervId);
-// //   window.clearTimeout(timeoutID);
-// // }
+};
 
+function newGame() {
+  location.reload();
+}
 
+function playGame(direction) {
+  if (direction === "quit") {
+    bottomMessages.innerHTML += ("<br>Thank You For Playing.");
+  }
+  else {
+    moveHunter(direction);
+    moveRobbers();
+    updateMap();
+    if (captureHunter() === true) {
+      endGame();
+    }
+    else {
+      if (getTreasure() === true) {
+        if (museum.treasure < maxTreasure) {
+          newTreasure()
+          updateMap();
+        };
+      };
+      deliverTreasure();
 
-// // object.addEventListener("keypress", getMove());
+      if (museum.treasure >= maxTreasure) {
+        bottomMessages.innerHTML = ("<br>Congratulations You Collected All of The Stolen Treasure and Collected $" + treasureHunter.rewardCollected + " in Rewards. Great Job!");
+        bottomMessages.innerHTML += ("<br>Thank You For Playing.");
+        endGame();
+      }
+    }
+  }
+};
 
-// // function getMove() {
-// //   document.addEventListener("keypress", keyPressHandler, false);
+function up() {
+  playGame("up");
+};
 
-// //   function keyPressHandler(e) {
-// //     switch(e.keyCode) {
-// //       case 104 || 38:
-// //         upKeyPressed = true;
-// //         //treasureHunter.move(8)
-// //         break;
-// //       case 98 || 40:
-// //         downKeyPressed = true;
-// //         //treasureHunter.move(2)
-// //         break;
-// //       case 100 || 37:
-// //         leftKeyPressed = true;
-// //         //treasureHunter.move(4)
-// //         break;
-// //       case 102 || 39:
-// //         rightKeyPressed = true;
-// //         //treasureHunter.move(6)
-// //         break;
-// //       case 96 || 81:
-// //         quitKeyPressed = true;
-// //         treasureHunter.move(0)
-// //         break;
-// //     }
-// // };
+function down() {
+  playGame("down");
+};
 
-// var captureHunter = function() {
-//   if ((treasureHunter.positionX === robber.positionX && treasureHunter.positionY == robber.positionY) ||
-//       (treasureHunter.positionX === robber2.positionX && treasureHunter.positionY == robber2.positionY)) {
-//     topMessages.innerHTML = "You were captured by robbers. Game Over";
-//     process.exit(code=0);
-//   }
-// };
+function left() {
+  playGame("left");
+};
 
-// var huntForTreasure = function(direction) {
-//     treasureHunter.move(direction);
-//     robber.move();
-//     if (Math.floor(Math.random() * 3) === 2) robber2.move();
-//     captureHunter();
-//     foundTreasure = treasureHunter.getTreasure();
-//     deliveredTreasure = treasureHunter.deliverTreasure();
-//     if (foundTreasure === false && deliveredTreasure === false) {
-//       bottomMessages.innerHTML = ("\nKeep Looking, you haven't found the treasure yet, it is located at " + treasure.location());
-//     }
-// };
+function right() {
+  playGame("right");
+};
 
-
-// // Treasure Hunter Object and all of its Properties and actions.
-// // ----------------------------------------------------------------
-
-// treasureHunter.move = function(direction) {           // Accepts the direction parameter and drives movement
-//   var displayNewLocation = function() {
-//     return ("You have moved to " + treasureHunter.location());
-//   };
-//   var displayError = function() {
-//     return ("You are already at the end of the map.");
-//   };
-//   switch(direction) {
-//     case 8:
-//       if (treasureHunter.positionY === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 2:
-//       if (treasureHunter.positionY === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionY += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 4:
-//       if (treasureHunter.positionX === 0) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX -= 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//     case 6:
-//       if (treasureHunter.positionX === (mapSize -1)) {
-//         document.getElementById(bottomMessages).appendChild(displayError());
-//         break;
-//       }
-//       treasureHunter.positionX += 1;
-//       document.getElementById(bottomMessages).appendChild(displayNewLocation());
-//       break;
-//   }
-// };
-
-// treasureHunter.getTreasure = function() {
-//   if (treasureHunter.positionX === treasure.positionX && treasureHunter.positionY === treasure.positionY) {
-//     if (treasureHunter.lootBag >= maxLoot) {
-//       document.getElementById(bottomMessages).appendChild("You can only carry " + maxLoot + " in your loot bag, You must deliver to the museum before collecting additional treasure.");
-//       return false;
-//     }
-//     else {
-//       treasureHunter.lootBag += 1;
-//       document.getElementById(topMessages).appendChild(("\nGreat Job you found the treasure, hurry and brint it back to the museum at " + museum.location()).toString());
-//       treasure.newTreasure();
-//       return true;
-//     }
-//   }
-//   else {
-//     return false;
-//   }
-// };
-
-// treasureHunter.deliverTreasure = function() {
-//   if (treasureHunter.positionX === museum.positionX && treasureHunter.positionY === museum.positionY) {
-//     if (treasureHunter.lootBag >= 1) {
-//       museum.treasure += treasureHunter.lootBag;
-//       document.getElementById(topMessages).appendChild(("\n\nGreat Job you returned " + treasureHunter.lootBag + " pieces of stolen treasure. So far, the museum has " + museum.treasure + " pieces of the stolen treasure safe and sound in the vault.").toString());
-//       // Give Reward
-//       var reward = (Math.floor(Math.random() * 25) * 500);
-//       treasureHunter.rewardCollected += reward;
-//       document.getElementById(bottomMessages).appendChild(("\nAs a thank you for your efforts, the museum has paid you a reward of $" + reward + " .  So far, you have collected $" + treasureHunter.rewardCollected).toString());
-
-//       treasureHunter.lootBag = 0;
-//       return true;
-//     }
-//     else if (treasureHunter.lootBag < 1) {
-//       document.getElementById(bottomMessages).appendChild("Well you managed to get to the museum but without any of the stolen treasure.  Try Again");
-//     return false;
-//     }
-//   }
-//   else {
-//     return false;
-//   }
-// };
-
-
-//   move: function() {
-
-//   if (robber.moveCountX < robber.moveCountY) {
-//     if (treasureHunter.positionX > robber.positionX) {
-//       if (robber.positionX < 9) robber.positionX += 1;
-//     }
-//     else {
-//       if (robber.positionX > 1) robber.positionX -= 1;
-//     }
-
-//     robber.moveCountX += 1;
-//   }
-//   else {
-//     if (treasureHunter.positionY > robber.positionY) {
-//       if (robber.positionY < 9) robber.positionY += 1;
-//     }
-//     else {
-//       if (robber.positionY > 1) robber.positionY -= 1;
-//     }
-
-//     robber.moveCountY += 1;
-//   }
-//   document.getElementById(bottomMessages).appendChild(("\nRobbers are on the move, they have been seen heading your way! " + robber.location()).toString());
-//   }
-// };
-
-// var robber2 = {
-//   positionX: randomLocation(mapSize-1),
-//   positionY: randomLocation(mapSize-1),
-//   location: function() {
-//     return ("Coordinates:  X" + robber.positionX + " - Y" + robber.positionY);
-//   },
-//   move: function() {
-//     robber2.positionX = randomLocation(mapSize-1);
-//     robber2.positionY = randomLocation(mapSize-1);
-//   },
-// };
-
-// // Museum Object and all of its Properties and actions.
-// // ----------------------------------------------------------------
-// var museum = {
-//   positionX: 9,
-//   positionY: 9,
-//   treasure: 0,
-//   location: function() {
-//     return ("Coordinates:  X" + museum.positionX + " - Y" + museum.positionY);
-//   }
-// };
-
-// // Treasure Object and all of its Properties and actions.
-// // ----------------------------------------------------------------
-// var treasure = {
-//   positionX: randomLocation(mapSize / 2),
-//   positionY: randomLocation(mapSize / 2),
-//   location: function() {
-//     return ("Coordinates:  X" + treasure.positionX + " - Y" + treasure.positionY);
-//   },
-//   newTreasure: function() {                 // Assigns a new treasure to a random location until goals are met
-//     if ((museum.treasure + treasureHunter.lootBag) >= maxTreasure) {
-//       document.getElementById(topMessages).appendChild("\nAll Treasure has been found, you must deliver the treasure to the museum without being captured.");
-//       treasure.positionX = 0;
-//       treasure.positionY = 0;
-//     }
-//     else {
-//       treasure.positionX = randomLocation(mapSize / 2);
-//       treasure.positionY = randomLocation(mapSize / 2);
-//       document.getElementById(bottomMessages).appendChild("\nWe have received reports that stolen treasure has been found at " + treasure.location());
-//     };
-//   }
-// };
-
-// // ----------------------------------------------------------------
-// // ----------------------------------------------------------------
-// // Game Operation
-// // ----------------------------------------------------------------
-// // ----------------------------------------------------------------
-
-// document.getElementById(bottomMessages).appendChild("Would You Like To Play");
-
-// var playGame = function() {
-//   var exitGame = false;
-//   while (exitGame === false) {
-//     huntForTreasure(getMove());
-//     if (museum.treasure >= maxTreasure) {
-//       bottomMessages.innerHTML = (("\n\nCongratulations You Collected All of The Stolen Treasure and Collected $" + treasureHunter.rewardCollected + " in Rewards. Great Job!").toString();
-//       bottomMessages.innerHTML += ("\n\nThank You For Playing.");
-//       exitGame = true;
-//     }
-//     else {
-//       exitGame = false;
-//     }
-//  }
-// };
-
-
-// playGame();
+function quitPressed() {
+  playGame("quit");
+};
 
 </script>
-
 </body>
 </html>

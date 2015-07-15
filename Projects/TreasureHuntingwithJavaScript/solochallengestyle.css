@@ -12,11 +12,12 @@ hr {
   margin-top: 0;
 }
 #header {
+  background-color: #D5D5D5;
   display: block;
   clear: both;
   width: 100%;
   height: 110px;
-  max-height: 125px;
+  max-height: 200px;
   margin: 0 0 0 0;
 }
 #header h1 {
@@ -60,7 +61,7 @@ hr {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 #blankxHead {
-	background-color:transparent;
+	background-color: #4183C4;
 	height: 50px;
   	width: 50px;
 }
@@ -117,13 +118,25 @@ hr {
   vertical-align: middle;
   margin: 15px auto 5px auto;
 }
-.navOptionsMenu .cell {
-  width: 50px;
+.navOptionsMenu .navButton button {
+  width: 65px;
   height: 50px;
   background-color: #727272;
   border-radius: 5px;
   text-align: center;
   vertical-align: middle;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+}
+#gameButton button {
+  width: 200px;
+  height: 50px;
+  background-color: #727272;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
 }
 .navOptionsMenu .cellBlank {
   width: 50px;
