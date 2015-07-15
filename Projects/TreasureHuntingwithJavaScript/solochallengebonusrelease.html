@@ -538,7 +538,7 @@ function deliverTreasure() {
       museum.treasure += treasureHunter.lootBag;
       bottomMessages.innerHTML += ("<br>You returned " + treasureHunter.lootBag + " pieces of stolen treasure!");
       // Give Reward
-      var reward = ((Math.random() * 25) * 5000).round(2);
+      var reward = (Math.floor(Math.random() * 25) * 5000);
       treasureHunter.rewardCollected += reward;
       bottomMessages.innerHTML += ("<br><br>As a thank you for your efforts, the museum has paid you a reward of $" + reward + " .  <br>So far, you have collected $" + treasureHunter.rewardCollected);
       treasureHunter.lootBag = 0;
