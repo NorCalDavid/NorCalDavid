@@ -80,12 +80,7 @@ hr {
 .topMessageWindow {
   position: relative;
   float: right;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15)
-    ),
-    url("treasurebackground.png");
+  background-color: #8F7F64;
   width: 33%;
   max-width: 600px;
   height: 100%;
