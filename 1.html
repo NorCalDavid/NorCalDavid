@@ -1,0 +1,433 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 935px; height: 1210px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load1();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_1{left:55px;top:32px;}
+#t2_1{left:712px;top:38px;}
+#t3_1{left:55px;top:61px;}
+#t4_1{left:710px;top:61px;}
+#t5_1{left:55px;top:82px;}
+#t6_1{left:220px;top:82px;}
+#t7_1{left:628px;top:82px;}
+#t8_1{left:73px;top:145px;}
+#t9_1{left:73px;top:176px;}
+#ta_1{left:73px;top:198px;}
+#tb_1{left:73px;top:221px;}
+#tc_1{left:73px;top:243px;}
+#td_1{left:73px;top:265px;}
+#te_1{left:73px;top:288px;}
+#tf_1{left:73px;top:310px;}
+#tg_1{left:73px;top:333px;}
+#th_1{left:73px;top:355px;}
+#ti_1{left:73px;top:377px;}
+#tj_1{left:73px;top:400px;}
+#tk_1{left:73px;top:421px;}
+#tl_1{left:332px;top:131px;}
+#tm_1{left:341px;top:154px;}
+#tn_1{left:464px;top:154px;}
+#to_1{left:607px;top:154px;}
+#tp_1{left:342px;top:173px;}
+#tq_1{left:607px;top:173px;}
+#tr_1{left:342px;top:192px;}
+#ts_1{left:607px;top:192px;}
+#tt_1{left:342px;top:212px;}
+#tu_1{left:607px;top:212px;}
+#tv_1{left:332px;top:238px;}
+#tw_1{left:332px;top:263px;}
+#tx_1{left:347px;top:288px;}
+#ty_1{left:361px;top:288px;}
+#tz_1{left:361px;top:306px;}
+#t10_1{left:347px;top:334px;}
+#t11_1{left:361px;top:334px;}
+#t12_1{left:361px;top:351px;}
+#t13_1{left:332px;top:378px;}
+#t14_1{left:347px;top:403px;}
+#t15_1{left:361px;top:403px;}
+#t16_1{left:754px;top:403px;}
+#t17_1{left:361px;top:421px;}
+#t18_1{left:361px;top:439px;}
+#t19_1{left:398px;top:475px;}
+#t1a_1{left:55px;top:511px;}
+#t1b_1{left:684px;top:511px;}
+#t1c_1{left:83px;top:541px;}
+#t1d_1{left:110px;top:541px;}
+#t1e_1{left:110px;top:558px;}
+#t1f_1{left:83px;top:585px;}
+#t1g_1{left:110px;top:585px;}
+#t1h_1{left:110px;top:603px;}
+#t1i_1{left:55px;top:651px;}
+#t1j_1{left:188px;top:651px;}
+#t1k_1{left:609px;top:651px;}
+#t1l_1{left:55px;top:694px;}
+#t1m_1{left:384px;top:694px;}
+#t1n_1{left:83px;top:724px;}
+#t1o_1{left:110px;top:724px;}
+#t1p_1{left:110px;top:741px;}
+#t1q_1{left:83px;top:768px;}
+#t1r_1{left:110px;top:768px;}
+#t1s_1{left:110px;top:785px;}
+#t1t_1{left:83px;top:812px;}
+#t1u_1{left:110px;top:812px;}
+#t1v_1{left:110px;top:830px;}
+#t1w_1{left:83px;top:856px;}
+#t1x_1{left:110px;top:856px;}
+#t1y_1{left:110px;top:874px;}
+#t1z_1{left:83px;top:901px;}
+#t20_1{left:110px;top:901px;}
+#t21_1{left:488px;top:901px;}
+#t22_1{left:110px;top:918px;}
+#t23_1{left:55px;top:967px;}
+#t24_1{left:379px;top:967px;}
+#t25_1{left:83px;top:996px;}
+#t26_1{left:110px;top:996px;}
+#t27_1{left:83px;top:1023px;}
+#t28_1{left:110px;top:1023px;}
+#t29_1{left:83px;top:1050px;}
+#t2a_1{left:110px;top:1050px;}
+#t2b_1{left:110px;top:1067px;}
+#t2c_1{left:83px;top:1094px;}
+#t2d_1{left:110px;top:1094px;}
+#t2e_1{left:110px;top:1112px;}
+
+.s11_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-HPSimplifiedLight1;
+	color: rgb(0,0,0);
+}
+
+.s1_1{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: ABCDEE-HPSimplifiedLight1;
+	color: rgb(0,0,0);
+}
+
+.s6_1{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-HPSimplified1;
+	color: rgb(0,0,0);
+}
+
+.s4_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-HPSimplifiedLight1;
+	color: rgb(255,255,255);
+}
+
+.s5_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-HPSimplified-Bold1;
+	color: rgb(0,0,0);
+}
+
+.s8_1{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: Symbol1;
+	color: rgb(0,0,0);
+}
+
+.s2_1{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-HPSimplifiedLight1;
+	color: rgb(0,0,0);
+}
+
+.s12_1{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-HPSimplified-Italic1;
+	color: rgb(0,0,0);
+}
+
+.s10_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Wingdings1;
+	color: rgb(0,0,0);
+}
+
+.s7_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-HPSimplified1;
+	color: rgb(0,0,0);
+}
+
+.s3_1{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-HPSimplifiedLight1;
+	color: rgb(255,255,255);
+}
+
+.s9_1{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-HPSimplified-Bold1;
+	color: rgb(0,0,0);
+}
+
+#form1_1{	border-style:none;	z-index:2;	position: absolute;	left:708px;	top:32px;	width:144px;	height:31px;	text-align:left;	background: transparent;	font:normal 24px Arial, Helvetica, sans-serif;}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts1" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Wingdings1;
+	src :url("1/fonts/ABCDEE-Wingdings.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-HPSimplified1;
+	src :url("1/fonts/ABCDEE-HPSimplified.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-HPSimplifiedLight1;
+	src :url("1/fonts/ABCDEE-HPSimplifiedLight.woff") format("woff");
+}
+
+@font-face {
+	font-family: Symbol1;
+	src :url("1/fonts/Symbol.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-HPSimplified-Bold1;
+	src :url("1/fonts/ABCDEE-HPSimplified-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-HPSimplified-Italic1;
+	src :url("1/fonts/ABCDEE-HPSimplified-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_1" class="t s1_1">David Uli </div>
+<div id="t2_1" class="t s2_1">www.daviduli.com </div>
+<div id="t3_1" class="t s2_1">2412 Basswood Drive, San Ramon CA 94582 </div>
+<div id="t4_1" class="t s2_1">mail@daviduli.com </div>
+<div id="t5_1" class="t s2_1">T: (504) 201-4466 </div>
+<div id="t6_1" class="t s2_1">W: (925) 965-4834 </div>
+<div id="t7_1" class="t s2_1">www.github.com/NorCalDavid  </div>
+<div id="t8_1" class="t s3_1">ABOUT ME </div>
+<div id="t9_1" class="t s4_1">I am a full-stack web developer </div>
+<div id="ta_1" class="t s4_1">who is excited to return to the </div>
+<div id="tb_1" class="t s4_1">tech community after spending </div>
+<div id="tc_1" class="t s4_1">10+ years working in corporate </div>
+<div id="td_1" class="t s4_1">and field operations, human </div>
+<div id="te_1" class="t s4_1">resources and retail management. </div>
+<div id="tf_1" class="t s4_1">I am inspired by clean, readable </div>
+<div id="tg_1" class="t s4_1">code and I am looking for </div>
+<div id="th_1" class="t s4_1">opportunities to develop </div>
+<div id="ti_1" class="t s4_1">innovative solutions to the </div>
+<div id="tj_1" class="t s4_1">operational challenges facing </div>
+<div id="tk_1" class="t s4_1">enterprises. </div>
+<div id="tl_1" class="t s5_1">SKILLS </div>
+<div id="tm_1" class="t s6_1">• Ruby, JavaScript, </div>
+<div id="tn_1" class="t s6_1">AJAX, JQuery  </div>
+<div id="to_1" class="t s6_1">• HTML5/CSS3 </div>
+<div id="tp_1" class="t s6_1">• Rails, Sinatra, EmberJS  </div>
+<div id="tq_1" class="t s6_1">• Git, Github, Git Worflow </div>
+<div id="tr_1" class="t s6_1">• TDD (RSpec and Jasmine) </div>
+<div id="ts_1" class="t s6_1">• PostgreSQL, SQLite, Active Record </div>
+<div id="tt_1" class="t s6_1">• Agile Development </div>
+<div id="tu_1" class="t s6_1">• Object-Oriented / MVC Design </div>
+<div id="tv_1" class="t s5_1">PROJECTS </div>
+<div id="tw_1" class="t s7_1">Active Schema Designer [ Live || Github ] </div>
+<div id="tx_1" class="t s8_1"></div>
+<div id="ty_1" class="t s6_1">Led a team of 4 to develop a tool for building database schemas directly in the </div>
+<div id="tz_1" class="t s6_1">browser and provides the ability to save and export schema designs. </div>
+<div id="t10_1" class="t s8_1"></div>
+<div id="t11_1" class="t s6_1">Active Schema Designer automatically build the Active Record model and </div>
+<div id="t12_1" class="t s6_1">migration files with all of the appropriate validations and relationship </div>
+<div id="t13_1" class="t s7_1">SmartSync [ Live || Github ] </div>
+<div id="t14_1" class="t s8_1"></div>
+<div id="t15_1" class="t s6_1">Home automation controller that is currently in development. </div>
+<div id="t16_1" class="t s6_1">SmartSync will </div>
+<div id="t17_1" class="t s6_1">interface with the Insteon API and provide full control of all Insteon Smart Home </div>
+<div id="t18_1" class="t s6_1">Devices as well as several other home control devices. </div>
+<div id="t19_1" class="t s9_1">EXPERIENCE  </div>
+<div id="t1a_1" class="t s9_1">Dev Boot Camp, San Francisco, CA </div>
+<div id="t1b_1" class="t s9_1">May 2015-Oct 2015 </div>
+<div id="t1c_1" class="t s10_1"></div>
+<div id="t1d_1" class="t s11_1">Completed a 19-week immersive coding boot camp comprising of 1000+ hours learning Ruby, Rails, JavaScript, </div>
+<div id="t1e_1" class="t s11_1">HTML5/CSS3 and accompanying tools and frameworks. </div>
+<div id="t1f_1" class="t s10_1"></div>
+<div id="t1g_1" class="t s11_1">Emphasis on optimal learning, group projects, pair-programming, industry practices and concepts (Agile, Version </div>
+<div id="t1h_1" class="t s11_1">Control, TDD, OOP), and emotional intelligence. </div>
+<div id="t1i_1" class="t s9_1">Ross Stores Inc.,</div>
+<div id="t1j_1" class="t s9_1">Dublin, CA  </div>
+<div id="t1k_1" class="t s9_1">November 2008 – March 2015</div>
+<div id="t1l_1" class="t s12_1">Manager of Brand Maintenance and Repair </div>
+<div id="t1m_1" class="t s12_1">(April 2013-Present)   </div>
+<div id="t1n_1" class="t s10_1"></div>
+<div id="t1o_1" class="t s11_1">Developed Microsoft Access Database to automate and streamline the accounts payable, field reporting and </div>
+<div id="t1p_1" class="t s11_1">quality control processes. </div>
+<div id="t1q_1" class="t s10_1"></div>
+<div id="t1r_1" class="t s11_1">Directly manage a team of seven employees responsible for quality control and execution of maintenance and </div>
+<div id="t1s_1" class="t s11_1">repair programs supporting over 1,300 Ross and dd’s Stores across the United States. </div>
+<div id="t1t_1" class="t s10_1"></div>
+<div id="t1u_1" class="t s11_1">Tested and implemented the Customized Janitorial Program, tailoring services based on store volume metrics. </div>
+<div id="t1v_1" class="t s11_1">This is the largest change to the program in Ross’ history. </div>
+<div id="t1w_1" class="t s10_1"></div>
+<div id="t1x_1" class="t s11_1">Responsible for the development and management of a $34 million expense budget, conducting monthly forecast </div>
+<div id="t1y_1" class="t s11_1">adjustments and reconciliation.  </div>
+<div id="t1z_1" class="t s10_1"></div>
+<div id="t20_1" class="t s11_1">Negotiate and administer all service provider contracts. </div>
+<div id="t21_1" class="t s11_1">Initiate and conduct RFP (Request for Proposal) processes </div>
+<div id="t22_1" class="t s11_1">when necessary. </div>
+<div id="t23_1" class="t s12_1">Manager of New Stores/New Market Entry </div>
+<div id="t24_1" class="t s12_1">(June 2011-April 2013) </div>
+<div id="t25_1" class="t s10_1"></div>
+<div id="t26_1" class="t s11_1">Facilitated over 180 new store openings, relocations and store closing activities. </div>
+<div id="t27_1" class="t s10_1"></div>
+<div id="t28_1" class="t s11_1">Directly managed a team of two employees. </div>
+<div id="t29_1" class="t s10_1"></div>
+<div id="t2a_1" class="t s11_1">Created the company’s “New Store Opening Kit” including detailed manuals for employee training and </div>
+<div id="t2b_1" class="t s11_1">development, comprehensive instructions for store setup and operation, and resources for new store managers. </div>
+<div id="t2c_1" class="t s10_1"></div>
+<div id="t2d_1" class="t s11_1">Proactively worked with business partners to identify opportunities for expense savings and process </div>
+<div id="t2e_1" class="t s11_1">improvements. </div>
+
+<!-- End text definitions -->
+
+
+<!-- Begin Form Data -->
+<form>
+<input type="button"  tabindex="1"  id="form1_1" name="193 0 R"  pdfFieldName="193 0 R" onclick="window.open('http://www.daviduli.com/','_blank');" style="cursor:pointer;" title="http://www.daviduli.com/" />
+
+</form>
+<!-- End Form Data -->
+<!-- Begin page background -->
+<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1"><object width="935" height="1210" data="1/1.svg" type="image/svg+xml" id="pdf1" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld1" type="text/javascript">
+
+var isIE = false;
+var f1 = [['t1_1',340],['t3_1',1315],['t5_1',546],['t6_1',567],['t7_1',900],['t8_1',309],['t9_1',845],['ta_1',807],['tb_1',843],['tc_1',841],['td_1',757],['te_1',928],['tf_1',848],['tg_1',681],['th_1',663],['ti_1',715],['tj_1',792],['tm_1',466],['tn_1',354],['to_1',360],['tp_1',622],['tq_1',625],['tr_1',671],['ts_1',894],['tt_1',514],['tu_1',780],['tw_1',1107],['ty_1',1963],['tz_1',1715],['t11_1',1828],['t12_1',1746],['t13_1',745],['t15_1',1548],['t16_1',372],['t17_1',2011],['t18_1',1362],['t19_1',395],['t1a_1',1048],['t1b_1',606],['t1d_1',2994],['t1e_1',1491],['t1g_1',3020],['t1h_1',1265],['t1i_1',515],['t1j_1',349],['t1k_1',922],['t1l_1',1268],['t1m_1',665],['t1o_1',2900],['t1p_1',690],['t1r_1',2962],['t1s_1',2311],['t1u_1',2968],['t1v_1',1541],['t1x_1',3076],['t1y_1',855],['t20_1',1482],['t21_1',1559],['t22_1',448],['t23_1',1249],['t24_1',691],['t26_1',2146],['t28_1',1189],['t2a_1',2726],['t2b_1',3023],['t2d_1',2693]];
+function load1(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f1);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 87;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_1");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>
